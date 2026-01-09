@@ -681,7 +681,7 @@
     }
   }
 
-  /* ====== RIGHT COLUMN - AÇÕES SIMPLIFICADAS ====== */
+  /* ====== RIGHT COLUMN - BOTÕES DE CONTATO ====== */
   .action-panel{
     background: rgba(232,240,255,0.03);
     border-radius: var(--radius-md);
@@ -743,72 +743,87 @@
     padding: 1.2rem;
     margin-bottom:1.5rem;
     border: 1px solid rgba(74,158,255,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   @media (min-width: 768px) {
     .contact-info{
       padding: 1.5rem;
       margin-bottom:2rem;
+      gap: 1rem;
     }
   }
 
-  .contact-item{
-    display:flex;
-    align-items:center;
-    gap:0.8rem;
-    margin-bottom:1rem;
+  .contact-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
     color: var(--silver-light);
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 8px;
-    padding: 0.8rem;
+    border-radius: 12px;
+    padding: 1rem;
+    background: rgba(232,240,255,0.05);
+    border: 1px solid rgba(232,240,255,0.1);
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .contact-button:hover {
+    background: rgba(74,158,255,0.15);
+    border-color: rgba(74,158,255,0.3);
+    transform: translateY(-2px);
+  }
+
+  .contact-button.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.15);
+    border-color: rgba(37, 211, 102, 0.3);
   }
 
   @media (min-width: 768px) {
-    .contact-item{
+    .contact-button{
       gap:1rem;
-      margin-bottom:1.2rem;
+      padding: 1.2rem;
     }
-  }
-
-  .contact-item:hover{
-    background: rgba(74,158,255,0.15);
-  }
-
-  .contact-item:last-child{
-    margin-bottom:0;
   }
 
   .contact-icon{
     width: 36px;
     height: 36px;
-    border-radius: 8px;
+    border-radius: 10px;
     background: rgba(74,158,255,0.2);
     display:grid;
     place-items:center;
     color: var(--silver-light);
     flex-shrink: 0;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+  }
+
+  .contact-button.whatsapp .contact-icon {
+    background: rgba(37, 211, 102, 0.2);
   }
 
   @media (min-width: 768px) {
     .contact-icon{
       width: 40px;
       height: 40px;
-      border-radius: 10px;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
   .contact-text{
     flex:1;
-    min-width: 0; /* Permite quebra de texto */
+    min-width: 0;
+    text-align: left;
   }
 
   .contact-label{
     font-size:0.85rem;
     color: var(--silver-medium);
     margin-bottom:0.2rem;
+    display: block;
   }
 
   @media (min-width: 768px) {
@@ -822,12 +837,23 @@
     font-size:1rem;
     line-height: 1.3;
     word-break: break-word;
+    display: block;
   }
 
   @media (min-width: 768px) {
     .contact-value{
       font-size:1.1rem;
     }
+  }
+
+  .contact-copy-icon {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .contact-button:hover .contact-copy-icon {
+    opacity: 1;
   }
 
   .tags-container{
@@ -1001,6 +1027,10 @@
     .highlight-card, .info-item{
       padding: 1rem;
     }
+    
+    .contact-button {
+      padding: 0.8rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -1010,6 +1040,66 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+/* ====== AJUSTES PARA EVITAR QUEBRA DE TEXTO NOS CONTATOS ====== */
+.contact-text {
+  flex: 1;
+  min-width: 0; /* Isso permite que o flex-shrink funcione */
+  text-align: left;
+  overflow: hidden; /* Esconde qualquer overflow */
+}
+
+.contact-value {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  white-space: nowrap; /* Impede quebra de linha */
+  overflow: hidden; /* Esconde texto que ultrapassar */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .contact-value {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ajustes específicos para telas menores */
+@media (max-width: 480px) {
+  .contact-value {
+    font-size: 0.95rem;
+    letter-spacing: -0.01em; /* Reduz um pouco o espaçamento para caber mais */
+  }
+  
+  .contact-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 380px) {
+  .contact-button {
+    padding: 0.9rem 0.8rem;
+  }
+  
+  .contact-value {
+    font-size: 0.9rem;
+  }
+  
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Para garantir que os botões de email fiquem sempre em uma linha */
+.email-button .contact-value {
+  word-break: keep-all; /* Não quebra palavras */
+  overflow-wrap: normal; /* Não quebra palavras longas */
+}
+
 </style>
 </head>
 
@@ -1113,23 +1203,37 @@
             Entre em contato para agendar seu horário exclusivo ou obter mais informações sobre nosso encontro.
           </p>
           
-          <div class="contact-info">
-            <div class="contact-item" onclick="copyToClipboard('convite@edelwhite.com', 'E-mail')">
-            
-              <div class="contact-text">
-                <div class="contact-label">E-mail</div>
-                <div class="contact-value">comercial@edelwhite.com<br>juliana.alexandre@edelwhite.com</div>
-              </div>
-            </div>
-            
-            <div class="contact-item" onclick="copyToClipboard('+55 11 97835-8700', 'WhatsApp')">
-            
-              <div class="contact-text">
-                <div class="contact-label">WhatsApp</div>
-                <div class="contact-value">+55 11 97835-8700</div>
-              </div>
-            </div>
-          </div>
+         <div class="contact-info">
+  <!-- Botão para email comercial -->
+  <button class="contact-button email-button"onclick="copyEmail(this, 'comercial@edelwhite.com')"title="Clique para copiar">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-text">
+      <span class="contact-label">COMERCIAL</span>
+      <span class="contact-value" data-email="comercial@edelwhite.com">comercial@edelwhite.com</span>
+    </div>
+    <span class="contact-copy-icon">📋</span>
+  </button>
+  
+  <!-- Botão para email pessoal -->
+  <button class="contact-button email-button"onclick="copyEmail(this, 'juliana.alexandre@edelwhite.com')"title="Clique para copiar">
+    <div class="contact-icon">👤</div>
+    <div class="contact-text">
+      <span class="contact-label">REPRESENTANTE</span>
+      <span class="contact-value" data-email="juliana.alexandre@edelwhite.com">juliana.alexandre@edelwhite.com</span>
+    </div>
+    <span class="contact-copy-icon">📋</span>
+  </button>
+  
+  <!-- Botão para WhatsApp -->
+  <a href="https://wa.me/5511978358700?text=Olá, tudo bem?, podemos conversar?" target="_blank" class="contact-button whatsapp" title="Abrir WhatsApp">
+    <div class="contact-icon">💬</div>
+    <div class="contact-text">
+      <span class="contact-label">WhatsApp</span>
+      <span class="contact-value">+55 11 97835-8700</span>
+    </div>
+    <span class="contact-copy-icon">➡️</span>
+  </a>
+</div>
 
           <div class="tags-container">
             <div class="tags-title">Temas do Encontro</div>
@@ -1231,21 +1335,59 @@
     observer.observe(el);
   });
   
-  // ====== FUNÇÃO PARA COPIAR TEXTO ======
-  function copyToClipboard(text, type) {
-    navigator.clipboard.writeText(text).then(() => {
-      // Feedback visual mais sutil
-      const originalText = event.currentTarget.querySelector('.contact-label').textContent;
-      event.currentTarget.querySelector('.contact-label').textContent = '✓ COPIADO!';
-      
+  // ====== FUNÇÃO PARA COPIAR EMAIL (ATUALIZADA) ======
+async function copyEmail(btn, email) {
+    try {
+      // tenta copiar
+      await navigator.clipboard.writeText(email);
+
+      // elementos do botão
+      const labelEl = btn.querySelector('.contact-label');
+      const valueEl = btn.querySelector('.contact-value');
+      const iconEl  = btn.querySelector('.contact-copy-icon');
+
+      // guarda originais
+      const originalLabel = labelEl ? labelEl.textContent : '';
+      const originalValue = valueEl ? (valueEl.dataset.email || valueEl.textContent) : '';
+      const originalIcon  = iconEl ? iconEl.textContent : '';
+
+      // feedback
+      if (labelEl) labelEl.textContent = '✓ COPIADO!';
+      if (valueEl) valueEl.textContent = email;
+      if (iconEl)  iconEl.textContent  = '✓';
+
+      const oldBg = btn.style.background;
+      const oldBorder = btn.style.borderColor;
+      btn.style.background = 'rgba(37, 211, 102, 0.12)';
+      btn.style.borderColor = 'rgba(37, 211, 102, 0.35)';
+
       setTimeout(() => {
-        event.currentTarget.querySelector('.contact-label').textContent = originalText;
-      }, 1500);
-    }).catch(err => {
-      console.error('Erro ao copiar: ', err);
-    });
+        if (labelEl) labelEl.textContent = originalLabel;
+        if (valueEl) valueEl.textContent = originalValue;
+        if (iconEl)  iconEl.textContent  = originalIcon || '📋';
+        btn.style.background = oldBg;
+        btn.style.borderColor = oldBorder;
+      }, 1800);
+
+    } catch (err) {
+      // fallback (caso clipboard bloqueado)
+      try {
+        const temp = document.createElement('textarea');
+        temp.value = email;
+        temp.setAttribute('readonly', '');
+        temp.style.position = 'fixed';
+        temp.style.opacity = '0';
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        alert('Email copiado ✅');
+      } catch (e) {
+        alert('Não foi possível copiar automaticamente. Copie manualmente: ' + email);
+      }
+      console.error('Erro ao copiar:', err);
+    }
   }
-  
   // ====== EFEITO DE PARTÍCULAS AZUIS ======
   function createSilverParticles() {
     const particlesContainer = document.querySelector('.background-art');
