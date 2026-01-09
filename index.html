@@ -98,6 +98,22 @@
     position:relative;
   }
 
+  @media (max-width: 768px) {
+    .intro-logo {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-logo {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
   .swiss-loader{
     width:100%;
     height:100%;
@@ -108,13 +124,19 @@
     width:100%;
     height:100%;
     border-radius:50%;
-    background: #FF0000; /* Vermelho da bandeira suíça */
+    background: #FF0000;
     position:relative;
     overflow:hidden;
     border: 8px solid rgba(255,255,255,0.3);
     box-shadow: 
       0 0 60px rgba(255,0,0,0.4),
       inset 0 0 40px rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 480px) {
+    .swiss-circle {
+      border-width: 6px;
+    }
   }
 
   .swiss-cross{
@@ -126,6 +148,20 @@
     height: 140px;
   }
 
+  @media (max-width: 768px) {
+    .swiss-cross {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .swiss-cross {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
   .cross-vertical{
     position:absolute;
     left:50%;
@@ -133,9 +169,23 @@
     transform:translateX(-50%);
     width: 40px;
     height: 140px;
-    background: white; /* Cruz branca */
+    background: white;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 768px) {
+    .cross-vertical {
+      width: 30px;
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cross-vertical {
+      width: 24px;
+      height: 80px;
+    }
   }
 
   .cross-horizontal{
@@ -145,9 +195,23 @@
     transform:translateY(-50%);
     width: 140px;
     height: 40px;
-    background: white; /* Cruz branca */
+    background: white;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  }
+
+  @media (max-width: 768px) {
+    .cross-horizontal {
+      width: 100px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cross-horizontal {
+      width: 80px;
+      height: 24px;
+    }
   }
 
   .loading-ring{
@@ -176,11 +240,13 @@
   .intro-text{
     text-align:center;
     max-width: 800px;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .intro-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(3.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight:800;
     margin-bottom:0.5rem;
     color: var(--silver-light);
@@ -189,22 +255,32 @@
     flex-direction:column;
     align-items:center;
     gap:0.2rem;
+    width: 100%;
   }
 
   .title-main{
-    font-size: clamp(3.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     background: var(--gradient-silver);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.1;
   }
 
   .title-sub{
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
     color: var(--silver-medium);
     font-weight:600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .title-sub {
+      letter-spacing: 0.1em;
+    }
   }
 
   .intro-subtitle{
@@ -218,7 +294,7 @@
   }
 
   .intro-loading{
-    width: 300px;
+    width: min(300px, 90%);
     height: 4px;
     background: rgba(232,240,255,0.1);
     border-radius: 2px;
@@ -242,8 +318,8 @@
   .intro-message{
     margin-top:1rem;
     color: var(--silver-medium);
-    font-size:1rem;
-    letter-spacing:0.2em;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    letter-spacing:0.15em;
     text-transform:uppercase;
     animation: pulse 2s infinite;
   }
@@ -278,6 +354,14 @@
     box-shadow: var(--shadow-xl);
     overflow:hidden;
     position:relative;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .invite-card {
+      width: 98vw;
+      border-radius: 20px;
+    }
   }
 
   /* ====== HEADER COM LOGO CENTRALIZADO ====== */
@@ -293,6 +377,12 @@
 
   @media (min-width: 768px) {
     .card-header {
+      padding: 3rem 2rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card-header {
       padding: 4rem 3rem 3rem;
     }
   }
@@ -303,6 +393,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .brand-section{
@@ -322,7 +413,15 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .logo-container {
+      aspect-ratio: 3/1;
+      margin-bottom: 1rem;
+    }
   }
 
   .new-logo{
@@ -341,12 +440,18 @@
     width: 80%;
   }
 
+  @media (max-width: 480px) {
+    .new-logo img {
+      width: 90%;
+    }
+  }
+
   .invite-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.3rem, 4vw, 2rem);
     font-weight:600;
     line-height:1.3;
-    margin-bottom:1.5rem;
+    margin-bottom:1rem;
     color: var(--ice);
     max-width: 900px;
     text-align: center;
@@ -361,9 +466,9 @@
   }
 
   .invite-subtitle{
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
     color: var(--silver-medium);
-    line-height:1.6;
+    line-height:1.5;
     max-width: 800px;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -374,7 +479,7 @@
   .content-grid{
     display:grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 1.5rem;
   }
 
@@ -391,6 +496,13 @@
       grid-template-columns: 1.15fr 1.15fr 0.9fr;
       gap: 2rem;
       padding: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content-grid {
+      gap: 1.2rem;
+      padding: 1.2rem;
     }
   }
 
@@ -416,6 +528,12 @@
     gap: 2rem;
   }
 
+  @media (max-width: 768px) {
+    .details-section {
+      gap: 1.5rem;
+    }
+  }
+
   .detail-card{
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-md);
@@ -426,9 +544,23 @@
     overflow:hidden;
   }
 
+  @media (max-width: 768px) {
+    .detail-card {
+      padding: 1.2rem;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .detail-card {
+      padding: 1rem;
+      border-radius: 14px;
+    }
+  }
+
   @media (min-width: 768px) {
     .detail-card{
-      padding: 2rem;
+      padding: 1.8rem;
     }
   }
 
@@ -456,6 +588,12 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   }
 
+  @media (max-width: 768px) {
+    .detail-card:hover {
+      transform: translateY(-4px);
+    }
+  }
+
   .detail-card:hover::before{
     transform: scaleX(1);
   }
@@ -466,6 +604,13 @@
     gap:1rem;
     margin-bottom:1.5rem;
     flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .detail-header {
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
   }
 
   .detail-icon{
@@ -481,11 +626,19 @@
     flex-shrink: 0;
   }
 
-  @media (min-width: 768px) {
-    .detail-icon{
-      width: 60px;
-      height: 60px;
-      font-size:1.5rem;
+  @media (max-width: 768px) {
+    .detail-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .detail-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
     }
   }
 
@@ -497,9 +650,15 @@
     line-height: 1.2;
   }
 
-  @media (min-width: 768px) {
-    .detail-title{
-      font-size:1.8rem;
+  @media (max-width: 768px) {
+    .detail-title {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .detail-title {
+      font-size: 1.2rem;
     }
   }
 
@@ -510,10 +669,11 @@
     margin-bottom:1.5rem;
   }
 
-  @media (min-width: 768px) {
-    .detail-content{
-      font-size:1.1rem;
-      margin-bottom:2rem;
+  @media (max-width: 768px) {
+    .detail-content {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
   }
 
@@ -524,6 +684,12 @@
     gap: 1.5rem;
   }
 
+  @media (max-width: 768px) {
+    .innovations-container {
+      gap: 1.2rem;
+    }
+  }
+
   .innovations-text {
     color: var(--silver-medium);
     line-height: 1.6;
@@ -531,10 +697,10 @@
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .innovations-text {
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
   }
 
@@ -545,17 +711,17 @@
     margin-top: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .innovations-highlights {
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
     }
   }
 
   @media (max-width: 480px) {
     .innovations-highlights {
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 0.8rem;
     }
   }
 
@@ -572,10 +738,17 @@
     justify-content: center;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .highlight-card {
-      padding: 1.5rem;
-      min-height: 120px;
+      padding: 1rem;
+      min-height: 90px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .highlight-card {
+      padding: 0.9rem;
+      min-height: 85px;
     }
   }
 
@@ -594,10 +767,10 @@
     font-weight: 500;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .highlight-label {
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
     }
   }
 
@@ -608,9 +781,15 @@
     line-height: 1.3;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .highlight-value {
-      font-size: 1.3rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .highlight-value {
+      font-size: 0.95rem;
     }
   }
 
@@ -633,6 +812,12 @@
     }
   }
 
+  @media (max-width: 480px) {
+    .info-grid {
+      gap: 0.8rem;
+    }
+  }
+
   .info-item{
     background: rgba(232,240,255,0.03);
     padding:1.2rem;
@@ -641,9 +826,15 @@
     transition: all 0.3s ease;
   }
 
-  @media (min-width: 768px) {
-    .info-item{
-      padding:1.5rem;
+  @media (max-width: 768px) {
+    .info-item {
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .info-item {
+      padding: 0.9rem;
     }
   }
 
@@ -661,10 +852,9 @@
     font-weight:500;
   }
 
-  @media (min-width: 768px) {
-    .info-label{
-      font-size:0.9rem;
-      letter-spacing:0.1em;
+  @media (max-width: 768px) {
+    .info-label {
+      font-size: 0.8rem;
     }
   }
 
@@ -675,9 +865,15 @@
     line-height: 1.3;
   }
 
-  @media (min-width: 768px) {
-    .info-value{
-      font-size:1.3rem;
+  @media (max-width: 768px) {
+    .info-value {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .info-value {
+      font-size: 0.95rem;
     }
   }
 
@@ -690,6 +886,20 @@
     position: relative;
     height: auto;
     order: 1;
+  }
+
+  @media (max-width: 768px) {
+    .action-panel {
+      padding: 1.2rem;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .action-panel {
+      padding: 1rem;
+      order: 0;
+    }
   }
 
   @media (min-width: 768px) {
@@ -715,10 +925,10 @@
     color: var(--silver-light);
   }
 
-  @media (min-width: 768px) {
-    .panel-title{
-      font-size:1.8rem;
-      margin-bottom:1.5rem;
+  @media (max-width: 768px) {
+    .panel-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -729,11 +939,11 @@
     font-size:1rem;
   }
 
-  @media (min-width: 768px) {
-    .panel-subtitle{
-      margin-bottom:2.5rem;
-      line-height:1.7;
-      font-size:1.1rem;
+  @media (max-width: 768px) {
+    .panel-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
   }
 
@@ -748,11 +958,18 @@
     gap: 0.8rem;
   }
 
-  @media (min-width: 768px) {
-    .contact-info{
-      padding: 1.5rem;
-      margin-bottom:2rem;
-      gap: 1rem;
+  @media (max-width: 768px) {
+    .contact-info {
+      padding: 1rem;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-info {
+      padding: 0.9rem;
+      gap: 0.6rem;
     }
   }
 
@@ -769,6 +986,21 @@
     border: 1px solid rgba(232,240,255,0.1);
     text-decoration: none;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-button {
+      padding: 0.9rem;
+      gap: 0.7rem;
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-button {
+      padding: 0.8rem;
+      gap: 0.6rem;
+    }
   }
 
   .contact-button:hover {
@@ -801,6 +1033,23 @@
     font-size: 1.1rem;
   }
 
+  @media (max-width: 768px) {
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+      border-radius: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.95rem;
+    }
+  }
+
   .contact-button.whatsapp .contact-icon {
     background: rgba(37, 211, 102, 0.2);
   }
@@ -813,10 +1062,12 @@
     }
   }
 
-  .contact-text{
-    flex:1;
+  /* ====== AJUSTES PARA EVITAR QUEBRA DE TEXTO NOS CONTATOS ====== */
+  .contact-text {
+    flex: 1;
     min-width: 0;
     text-align: left;
+    overflow: hidden;
   }
 
   .contact-label{
@@ -824,11 +1075,19 @@
     color: var(--silver-medium);
     margin-bottom:0.2rem;
     display: block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
   }
 
-  @media (min-width: 768px) {
-    .contact-label{
-      font-size:0.9rem;
+  @media (max-width: 768px) {
+    .contact-label {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-label {
+      font-size: 0.75rem;
     }
   }
 
@@ -836,13 +1095,23 @@
     font-weight:600;
     font-size:1rem;
     line-height: 1.3;
-    word-break: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: block;
+    color: var(--ice);
   }
 
-  @media (min-width: 768px) {
-    .contact-value{
-      font-size:1.1rem;
+  @media (max-width: 768px) {
+    .contact-value {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-value {
+      font-size: 0.85rem;
+      letter-spacing: -0.01em;
     }
   }
 
@@ -850,6 +1119,13 @@
     opacity: 0.6;
     transition: opacity 0.3s ease;
     font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .contact-copy-icon {
+      font-size: 0.9rem;
+    }
   }
 
   .contact-button:hover .contact-copy-icon {
@@ -860,9 +1136,9 @@
     margin-top:1.5rem;
   }
 
-  @media (min-width: 768px) {
-    .tags-container{
-      margin-top:2.5rem;
+  @media (max-width: 768px) {
+    .tags-container {
+      margin-top: 1.2rem;
     }
   }
 
@@ -874,10 +1150,10 @@
     color: var(--silver-light);
   }
 
-  @media (min-width: 768px) {
-    .tags-title{
-      font-size:1.2rem;
-      margin-bottom:1.2rem;
+  @media (max-width: 768px) {
+    .tags-title {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
     }
   }
 
@@ -887,15 +1163,16 @@
     gap:0.6rem;
   }
 
-  @media (min-width: 768px) {
-    .tags-grid{
-      gap:0.8rem;
+  @media (max-width: 768px) {
+    .tags-grid {
+      gap: 0.5rem;
     }
   }
 
   @media (max-width: 480px) {
     .tags-grid{
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
     }
   }
 
@@ -910,10 +1187,18 @@
     transition: all 0.3s ease;
   }
 
-  @media (min-width: 768px) {
-    .tag{
-      padding: 0.8rem 1rem;
-      font-size:0.95rem;
+  @media (max-width: 768px) {
+    .tag {
+      padding: 0.6rem 0.7rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tag {
+      padding: 0.5rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 6px;
     }
   }
 
@@ -932,9 +1217,15 @@
     background: rgba(10,21,37,0.5);
   }
 
-  @media (min-width: 768px) {
-    .card-footer{
-      padding: 2.5rem 3rem;
+  @media (max-width: 768px) {
+    .card-footer {
+      padding: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card-footer {
+      padding: 1rem;
     }
   }
 
@@ -942,12 +1233,14 @@
     color: var(--silver-medium);
     font-size:0.9rem;
     line-height:1.5;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  @media (min-width: 768px) {
-    .footer-text{
-      font-size:1rem;
-      line-height:1.6;
+  @media (max-width: 768px) {
+    .footer-text {
+      font-size: 0.85rem;
+      line-height: 1.4;
     }
   }
 
@@ -978,58 +1271,69 @@
   .delay-3{ animation-delay: 0.6s; opacity:0; }
 
   /* ====== RESPONSIVO ESPECÍFICO ====== */
-  @media (max-width: 480px){
-    .intro-logo{
-      width: 150px;
-      height: 150px;
-      margin-bottom: 2rem;
-    }
-    
-    .swiss-cross{
-      width: 80px;
-      height: 80px;
-    }
-    
-    .cross-vertical{
-      width: 24px;
-      height: 80px;
-    }
-    
-    .cross-horizontal{
-      width: 80px;
-      height: 24px;
-    }
-    
-    .intro-title{
-      font-size: clamp(2.5rem, 5vw, 3rem);
-    }
-    
-    .title-main{
-      font-size: clamp(2.5rem, 5vw, 3rem);
-    }
-    
-    .title-sub{
-      font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-    
-    .intro-loading{
-      width: 250px;
-    }
-  }
-
-  @media (max-width: 320px){
-    .detail-header{
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-    
-    .highlight-card, .info-item{
+  @media (max-width: 375px) {
+    .intro-container {
       padding: 1rem;
     }
     
-    .contact-button {
-      padding: 0.8rem;
+    .intro-title {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+    
+    .title-main {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+    
+    .title-sub {
+      font-size: clamp(0.75rem, 2vw, 1rem);
+      letter-spacing: 0.08em;
+    }
+    
+    .intro-message {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    
+    .invite-title {
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+    
+    .invite-subtitle {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    
+    .detail-content, .innovations-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Para tablets em modo retrato */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .event-wide, .full-row {
+      grid-column: 1;
+    }
+    
+    .action-panel {
+      order: -1;
+    }
+  }
+
+  /* Para telas muito largas */
+  @media (min-width: 1400px) {
+    .invite-card {
+      width: min(1300px, 95vw);
+    }
+    
+    .content-grid {
+      padding: 4rem;
     }
   }
 
@@ -1041,65 +1345,57 @@
     }
   }
 
-/* ====== AJUSTES PARA EVITAR QUEBRA DE TEXTO NOS CONTATOS ====== */
-.contact-text {
-  flex: 1;
-  min-width: 0; /* Isso permite que o flex-shrink funcione */
-  text-align: left;
-  overflow: hidden; /* Esconde qualquer overflow */
-}
-
-.contact-value {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.3;
-  white-space: nowrap; /* Impede quebra de linha */
-  overflow: hidden; /* Esconde texto que ultrapassar */
-  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .contact-value {
-    font-size: 1.1rem;
+  /* Ajuste especial para evitar quebra em emails longos */
+  .email-button .contact-value {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    letter-spacing: -0.01em;
   }
-}
 
-/* Ajustes específicos para telas menores */
-@media (max-width: 480px) {
-  .contact-value {
-    font-size: 0.95rem;
-    letter-spacing: -0.01em; /* Reduz um pouco o espaçamento para caber mais */
+  /* Melhorias para orientação paisagem em mobile */
+  @media (max-height: 600px) and (orientation: landscape) {
+    .intro-container {
+      flex-direction: row;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    
+    .intro-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 0;
+    }
+    
+    .swiss-cross {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .cross-vertical {
+      width: 20px;
+      height: 70px;
+    }
+    
+    .cross-horizontal {
+      width: 70px;
+      height: 20px;
+    }
+    
+    .intro-text {
+      text-align: left;
+      max-width: 60%;
+    }
+    
+    .intro-title {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .title-sub {
+      margin-top: 0;
+    }
   }
-  
-  .contact-label {
-    font-size: 0.8rem;
-  }
-}
-
-/* Ajuste para telas muito pequenas */
-@media (max-width: 380px) {
-  .contact-button {
-    padding: 0.9rem 0.8rem;
-  }
-  
-  .contact-value {
-    font-size: 0.9rem;
-  }
-  
-  .contact-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-  }
-}
-
-/* Para garantir que os botões de email fiquem sempre em uma linha */
-.email-button .contact-value {
-  word-break: keep-all; /* Não quebra palavras */
-  overflow-wrap: normal; /* Não quebra palavras longas */
-}
-
 </style>
 </head>
 
@@ -1203,37 +1499,37 @@
             Entre em contato para agendar seu horário exclusivo ou obter mais informações sobre nosso encontro.
           </p>
           
-         <div class="contact-info">
-  <!-- Botão para email comercial -->
-  <button class="contact-button email-button"onclick="copyEmail(this, 'comercial@edelwhite.com')"title="Clique para copiar">
-    <div class="contact-icon">✉️</div>
-    <div class="contact-text">
-      <span class="contact-label">COMERCIAL</span>
-      <span class="contact-value" data-email="comercial@edelwhite.com">comercial@edelwhite.com</span>
-    </div>
-    <span class="contact-copy-icon">📋</span>
-  </button>
-  
-  <!-- Botão para email pessoal -->
-  <button class="contact-button email-button"onclick="copyEmail(this, 'juliana.alexandre@edelwhite.com')"title="Clique para copiar">
-    <div class="contact-icon">👤</div>
-    <div class="contact-text">
-      <span class="contact-label">REPRESENTANTE</span>
-      <span class="contact-value" data-email="juliana.alexandre@edelwhite.com">juliana.alexandre@edelwhite.com</span>
-    </div>
-    <span class="contact-copy-icon">📋</span>
-  </button>
-  
-  <!-- Botão para WhatsApp -->
-  <a href="https://wa.me/5511978358700?text=Olá, tudo bem?, podemos conversar?" target="_blank" class="contact-button whatsapp" title="Abrir WhatsApp">
-    <div class="contact-icon">💬</div>
-    <div class="contact-text">
-      <span class="contact-label">WhatsApp</span>
-      <span class="contact-value">+55 11 97835-8700</span>
-    </div>
-    <span class="contact-copy-icon">➡️</span>
-  </a>
-</div>
+          <div class="contact-info">
+            <!-- Botão para email comercial -->
+            <button class="contact-button email-button" onclick="copyEmail(this, 'comercial@edelwhite.com')" title="Clique para copiar">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-text">
+                <span class="contact-label">COMERCIAL</span>
+                <span class="contact-value" data-email="comercial@edelwhite.com">comercial@edelwhite.com</span>
+              </div>
+              <span class="contact-copy-icon">📋</span>
+            </button>
+            
+            <!-- Botão para email pessoal -->
+            <button class="contact-button email-button" onclick="copyEmail(this, 'juliana.alexandre@edelwhite.com')" title="Clique para copiar">
+              <div class="contact-icon">👤</div>
+              <div class="contact-text">
+                <span class="contact-label">REPRESENTANTE</span>
+                <span class="contact-value" data-email="juliana.alexandre@edelwhite.com">juliana.alexandre@edelwhite.com</span>
+              </div>
+              <span class="contact-copy-icon">📋</span>
+            </button>
+            
+            <!-- Botão para WhatsApp -->
+            <a href="https://wa.me/5511978358700?text=Olá, podemos conversar?" target="_blank" class="contact-button whatsapp" title="Abrir WhatsApp">
+              <div class="contact-icon">💬</div>
+              <div class="contact-text">
+                <span class="contact-label">WhatsApp</span>
+                <span class="contact-value">+55 11 97835-8700</span>
+              </div>
+              <span class="contact-copy-icon">➡️</span>
+            </a>
+          </div>
 
           <div class="tags-container">
             <div class="tags-title">Temas do Encontro</div>
@@ -1336,7 +1632,7 @@
   });
   
   // ====== FUNÇÃO PARA COPIAR EMAIL (ATUALIZADA) ======
-async function copyEmail(btn, email) {
+  async function copyEmail(btn, email) {
     try {
       // tenta copiar
       await navigator.clipboard.writeText(email);
@@ -1388,6 +1684,7 @@ async function copyEmail(btn, email) {
       console.error('Erro ao copiar:', err);
     }
   }
+  
   // ====== EFEITO DE PARTÍCULAS AZUIS ======
   function createSilverParticles() {
     const particlesContainer = document.querySelector('.background-art');
@@ -1431,6 +1728,28 @@ async function copyEmail(btn, email) {
       this.style.transform = 'translateY(0)';
     });
   });
+  
+  // ====== AJUSTE DE TAMANHO PARA DISPOSITIVOS MÓVEIS ======
+  function adjustForMobile() {
+    if (window.innerWidth <= 768) {
+      // Ajustar tamanhos de fonte para mobile
+      document.querySelectorAll('.detail-content, .innovations-text, .panel-subtitle').forEach(el => {
+        const currentSize = parseFloat(window.getComputedStyle(el).fontSize);
+        if (currentSize > 16) {
+          el.style.fontSize = '0.95rem';
+        }
+      });
+      
+      // Ajustar padding para economizar espaço
+      document.querySelectorAll('.detail-card, .action-panel').forEach(el => {
+        el.style.padding = '1rem';
+      });
+    }
+  }
+  
+  // Executar ao carregar e redimensionar
+  window.addEventListener('load', adjustForMobile);
+  window.addEventListener('resize', adjustForMobile);
 </script>
 </body>
 </html>
