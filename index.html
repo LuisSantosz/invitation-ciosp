@@ -677,14 +677,20 @@
     }
   }
 
-  /* ====== NOVO LAYOUT PARA INOVAÇÕES ====== */
+  /* ====== NOVO LAYOUT PARA INOVAÇÕES - CORRIGIDO ====== */
   .innovations-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   @media (max-width: 768px) {
+    .innovations-container {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
     .innovations-container {
       gap: 1.2rem;
     }
@@ -692,104 +698,135 @@
 
   .innovations-text {
     color: var(--silver-medium);
-    line-height: 1.6;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
   }
 
   @media (max-width: 768px) {
+    .innovations-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 480px) {
     .innovations-text {
       font-size: 0.95rem;
       line-height: 1.5;
     }
   }
 
-  .innovations-highlights {
+  .innovations-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    .innovations-highlights {
-      gap: 0.8rem;
-      margin-top: 0.8rem;
+    .innovations-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
 
   @media (max-width: 480px) {
-    .innovations-highlights {
+    .innovations-grid {
       grid-template-columns: 1fr;
-      gap: 0.8rem;
+      gap: 1rem;
     }
   }
 
-  .highlight-card {
+  .innovation-item {
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-sm);
-    padding: 1.2rem;
+    padding: 1.5rem;
     border: 1px solid rgba(232,240,255,0.1);
     transition: all 0.3s ease;
-    text-align: center;
-    min-height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
   }
 
   @media (max-width: 768px) {
-    .highlight-card {
-      padding: 1rem;
-      min-height: 90px;
+    .innovation-item {
+      padding: 1.2rem;
     }
   }
 
   @media (max-width: 480px) {
-    .highlight-card {
-      padding: 0.9rem;
-      min-height: 85px;
+    .innovation-item {
+      padding: 1rem;
     }
   }
 
-  .highlight-card:hover {
+  .innovation-item:hover {
     background: rgba(74,158,255,0.1);
     border-color: rgba(74,158,255,0.3);
     transform: translateY(-5px);
   }
 
-  .highlight-label {
-    font-size: 0.8rem;
+  .innovation-category {
+    font-size: 0.85rem;
     color: rgba(232,240,255,0.6);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   @media (max-width: 768px) {
-    .highlight-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
+    .innovation-category {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
     }
   }
 
-  .highlight-value {
-    font-size: 1.1rem;
-    font-weight: 600;
+  .innovation-category::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .innovation-value {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--ice);
     line-height: 1.3;
+    margin-top: auto;
   }
 
   @media (max-width: 768px) {
-    .highlight-value {
-      font-size: 1rem;
+    .innovation-value {
+      font-size: 1.2rem;
     }
   }
 
   @media (max-width: 480px) {
-    .highlight-value {
-      font-size: 0.95rem;
+    .innovation-value {
+      font-size: 1.1rem;
+    }
+  }
+
+  .innovation-description {
+    font-size: 0.9rem;
+    color: var(--silver-medium);
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .innovation-description {
+      font-size: 0.85rem;
     }
   }
 
@@ -1324,6 +1361,10 @@
     .action-panel {
       order: -1;
     }
+    
+    .innovations-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   /* Para telas muito largas */
@@ -1334,6 +1375,10 @@
     
     .content-grid {
       padding: 4rem;
+    }
+    
+    .innovations-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -1394,6 +1439,10 @@
     
     .title-sub {
       margin-top: 0;
+    }
+    
+    .innovations-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
@@ -1544,7 +1593,7 @@
           </div>
         </div>
 
-        <!-- Seção de Inovações -->
+        <!-- Seção de Inovações CORRIGIDA -->
         <div class="detail-card animate-in delay-2 full-row">
           <div class="detail-header">
             <div class="detail-icon">💡</div>
@@ -1561,25 +1610,29 @@
               uma marca que evolui para cuidar melhor de cada sorriso.
             </p>
             
-            <div class="innovations-highlights">
-              <div class="highlight-card">
-                <div class="highlight-label">TECNOLOGIA</div>
-                <div class="highlight-value">Precisão Suíça</div>
+            <div class="innovations-grid">
+              <div class="innovation-item">
+                <div class="innovation-category">TECNOLOGIA</div>
+                <div class="innovation-value">Precisão Suíça</div>
+                <div class="innovation-description">Excelência técnica e qualidade superior</div>
               </div>
               
-              <div class="highlight-card">
-                <div class="highlight-label">CORES</div>
-                <div class="highlight-value">Moderno & Sofisticado</div>
+              <div class="innovation-item">
+                <div class="innovation-category">CORES</div>
+                <div class="innovation-value">Moderno & Sofisticado</div>
+                <div class="innovation-description">Nova paleta de cores e identidade visual</div>
               </div>
               
-              <div class="highlight-card">
-                <div class="highlight-label">ATITUDE</div>
-                <div class="highlight-value">Próxima & Confiável</div>
+              <div class="innovation-item">
+                <div class="innovation-category">ATITUDE</div>
+                <div class="innovation-value">Próxima & Confiável</div>
+                <div class="innovation-description">Atendimento personalizado e relação de confiança</div>
               </div>
               
-              <div class="highlight-card">
-                <div class="highlight-label">DESIGN</div>
-                <div class="highlight-value">Conforto & Segurança</div>
+              <div class="innovation-item">
+                <div class="innovation-category">DESIGN</div>
+                <div class="innovation-value">Conforto & Segurança</div>
+                <div class="innovation-description">Ergonomia aprimorada para melhor experiência</div>
               </div>
             </div>
           </div>
@@ -1719,7 +1772,7 @@
   setTimeout(createSilverParticles, INTRO_DURATION + 1000);
   
   // ====== EFEITO DE HOVER NAS TAGS E CARDS ======
-  document.querySelectorAll('.tag, .highlight-card').forEach(item => {
+  document.querySelectorAll('.tag, .innovation-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-4px)';
     });
