@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Edel White | Convite CIOSP 2026</title>
 
-<!-- Fontes elegantes -->
+<!-- Fontes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +39,6 @@
     overflow-x: hidden;
   }
 
-  /* ====== BACKGROUND AZUL PRATA ====== */
   .background-art{
     position:fixed;
     inset:0;
@@ -71,7 +70,7 @@
     background-size: 100px 100px;
   }
 
-  /* ====== INTRODUÇÃO COM BANDEIRA SUÍÇA CORRETA ====== */
+  /* INTRODUÇÃO SIMPLIFICADA */
   .intro-container{
     position:fixed;
     inset:0;
@@ -92,26 +91,10 @@
   }
 
   .intro-logo{
-    width: 220px;
-    height: 220px;
-    margin-bottom: 3rem;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 2rem;
     position:relative;
-  }
-
-  @media (max-width: 768px) {
-    .intro-logo {
-      width: 180px;
-      height: 180px;
-      margin-bottom: 2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .intro-logo {
-      width: 140px;
-      height: 140px;
-      margin-bottom: 1.5rem;
-    }
   }
 
   .swiss-loader{
@@ -127,16 +110,10 @@
     background: #FF0000;
     position:relative;
     overflow:hidden;
-    border: 8px solid rgba(255,255,255,0.3);
+    border: 6px solid rgba(255,255,255,0.3);
     box-shadow: 
       0 0 60px rgba(255,0,0,0.4),
       inset 0 0 40px rgba(255,255,255,0.1);
-  }
-
-  @media (max-width: 480px) {
-    .swiss-circle {
-      border-width: 6px;
-    }
   }
 
   .swiss-cross{
@@ -144,22 +121,8 @@
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    width: 140px;
-    height: 140px;
-  }
-
-  @media (max-width: 768px) {
-    .swiss-cross {
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .swiss-cross {
-      width: 80px;
-      height: 80px;
-    }
+    width: 100px;
+    height: 100px;
   }
 
   .cross-vertical{
@@ -167,25 +130,11 @@
     left:50%;
     top:0;
     transform:translateX(-50%);
-    width: 40px;
-    height: 140px;
+    width: 30px;
+    height: 100px;
     background: white;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
-  }
-
-  @media (max-width: 768px) {
-    .cross-vertical {
-      width: 30px;
-      height: 100px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cross-vertical {
-      width: 24px;
-      height: 80px;
-    }
   }
 
   .cross-horizontal{
@@ -193,25 +142,11 @@
     top:50%;
     left:0;
     transform:translateY(-50%);
-    width: 140px;
-    height: 40px;
+    width: 100px;
+    height: 30px;
     background: white;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
-  }
-
-  @media (max-width: 768px) {
-    .cross-horizontal {
-      width: 100px;
-      height: 30px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cross-horizontal {
-      width: 80px;
-      height: 24px;
-    }
   }
 
   .loading-ring{
@@ -246,7 +181,7 @@
 
   .intro-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight:800;
     margin-bottom:0.5rem;
     color: var(--silver-light);
@@ -255,11 +190,10 @@
     flex-direction:column;
     align-items:center;
     gap:0.2rem;
-    width: 100%;
   }
 
   .title-main{
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     background: var(--gradient-silver);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -268,29 +202,12 @@
   }
 
   .title-sub{
-    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     color: var(--silver-medium);
     font-weight:600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    line-height: 1.3;
     margin-top: 0.5rem;
-  }
-
-  @media (max-width: 480px) {
-    .title-sub {
-      letter-spacing: 0.1em;
-    }
-  }
-
-  .intro-subtitle{
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--silver-medium);
-    margin-bottom: 3rem;
-    font-weight:500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-top: 1.5rem;
   }
 
   .intro-loading{
@@ -306,7 +223,7 @@
     width:0%;
     height:100%;
     background: var(--gradient-blue);
-    animation: loading 10s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: loading 8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     border-radius:2px;
   }
 
@@ -315,21 +232,7 @@
     100%{ width:100%; }
   }
 
-  .intro-message{
-    margin-top:1rem;
-    color: var(--silver-medium);
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    letter-spacing:0.15em;
-    text-transform:uppercase;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse{
-    0%, 100%{ opacity:0.7; }
-    50%{ opacity:1; }
-  }
-
-  /* ====== LAYOUT PRINCIPAL ====== */
+  /* LAYOUT PRINCIPAL */
   .main-container{
     position:relative;
     min-height:100vh;
@@ -338,7 +241,7 @@
     padding: 1rem;
     z-index:2;
     opacity:0;
-    animation: fadeIn 1s 10s forwards;
+    animation: fadeIn 1s 8s forwards;
   }
 
   @keyframes fadeIn{
@@ -354,17 +257,9 @@
     box-shadow: var(--shadow-xl);
     overflow:hidden;
     position:relative;
-    margin: 0 auto;
   }
 
-  @media (max-width: 640px) {
-    .invite-card {
-      width: 98vw;
-      border-radius: 20px;
-    }
-  }
-
-  /* ====== HEADER COM LOGO CENTRALIZADO ====== */
+  /* HEADER */
   .card-header{
     padding: 2rem 1.5rem 1.5rem;
     position:relative;
@@ -375,61 +270,29 @@
     text-align: center;
   }
 
-  @media (min-width: 768px) {
-    .card-header {
-      padding: 3rem 2rem 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .card-header {
-      padding: 4rem 3rem 3rem;
-    }
-  }
-
   .header-content{
     position:relative;
     z-index:2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .brand-section{
     width: 100%;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1.5rem;
   }
 
   .logo-container{
     position:relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: auto;
     aspect-ratio: 2/1;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  @media (max-width: 480px) {
-    .logo-container {
-      aspect-ratio: 3/1;
-      margin-bottom: 1rem;
-    }
-  }
-
-  .new-logo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto 1.5rem;
   }
 
   .new-logo img{
@@ -440,22 +303,16 @@
     width: 80%;
   }
 
-  @media (max-width: 480px) {
-    .new-logo img {
-      width: 90%;
-    }
-  }
-
   .invite-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
     font-weight:600;
     line-height:1.3;
     margin-bottom:1rem;
     color: var(--ice);
-    max-width: 900px;
+    max-width: 800px;
     text-align: center;
-    padding: 0 1rem;
+    margin: 0 auto;
   }
 
   .invite-title span{
@@ -466,16 +323,15 @@
   }
 
   .invite-subtitle{
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     color: var(--silver-medium);
     line-height:1.5;
-    max-width: 800px;
-    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
-    padding: 0 1rem;
   }
 
-  /* ====== CONTENT GRID ====== */
+  /* CONTENT GRID */
   .content-grid{
     display:grid;
     grid-template-columns: 1fr;
@@ -493,47 +349,13 @@
 
   @media (min-width: 1024px) {
     .content-grid{
-      grid-template-columns: 1.15fr 1.15fr 0.9fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 2rem;
-      padding: 3rem;
+      padding: 2.5rem;
     }
   }
 
-  @media (max-width: 480px) {
-    .content-grid {
-      gap: 1.2rem;
-      padding: 1.2rem;
-    }
-  }
-
-  /* ====== LAYOUT DE COLUNAS PARA DESKTOP ====== */
-  .detail-card{
-    width: 100%;
-  }
-
-  @media (min-width: 1024px) {
-    .event-wide{
-      grid-column: 1 / span 2;
-    }
-    
-    .full-row{
-      grid-column: 1 / -1;
-    }
-  }
-
-  /* ====== LEFT COLUMN ====== */
-  .details-section{
-    display:flex;
-    flex-direction:column;
-    gap: 2rem;
-  }
-
-  @media (max-width: 768px) {
-    .details-section {
-      gap: 1.5rem;
-    }
-  }
-
+  /* CARDS */
   .detail-card{
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-md);
@@ -544,30 +366,10 @@
     overflow:hidden;
   }
 
-  @media (max-width: 768px) {
-    .detail-card {
-      padding: 1.2rem;
-      border-radius: 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .detail-card {
-      padding: 1rem;
-      border-radius: 14px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .detail-card{
-      padding: 1.8rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .detail-card{
-      padding: 2.5rem;
-    }
+  .detail-card:hover{
+    transform: translateY(-8px);
+    border-color: rgba(74,158,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   }
 
   .detail-card::before{
@@ -582,18 +384,6 @@
     transition: transform 0.4s ease;
   }
 
-  .detail-card:hover{
-    transform: translateY(-8px);
-    border-color: rgba(74,158,255,0.3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  }
-
-  @media (max-width: 768px) {
-    .detail-card:hover {
-      transform: translateY(-4px);
-    }
-  }
-
   .detail-card:hover::before{
     transform: scaleX(1);
   }
@@ -603,14 +393,6 @@
     align-items:center;
     gap:1rem;
     margin-bottom:1.5rem;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 480px) {
-    .detail-header {
-      gap: 0.8rem;
-      margin-bottom: 1.2rem;
-    }
   }
 
   .detail-icon{
@@ -626,40 +408,12 @@
     flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .detail-icon {
-      width: 45px;
-      height: 45px;
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .detail-icon {
-      width: 40px;
-      height: 40px;
-      font-size: 1.1rem;
-    }
-  }
-
   .detail-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size:1.5rem;
     font-weight:700;
     color: var(--silver-light);
     line-height: 1.2;
-  }
-
-  @media (max-width: 768px) {
-    .detail-title {
-      font-size: 1.3rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .detail-title {
-      font-size: 1.2rem;
-    }
   }
 
   .detail-content{
@@ -669,31 +423,11 @@
     margin-bottom:1.5rem;
   }
 
-  @media (max-width: 768px) {
-    .detail-content {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-    }
-  }
-
-  /* ====== NOVO LAYOUT PARA INOVAÇÕES - CORRIGIDO ====== */
+  /* INOVAÇÕES */
   .innovations-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
-
-  @media (max-width: 768px) {
-    .innovations-container {
-      gap: 1.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .innovations-container {
-      gap: 1.2rem;
-    }
   }
 
   .innovations-text {
@@ -704,63 +438,22 @@
     text-align: justify;
   }
 
-  @media (max-width: 768px) {
-    .innovations-text {
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .innovations-text {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-  }
-
   .innovations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
     margin-top: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .innovations-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .innovations-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
   }
 
   .innovation-item {
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-sm);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border: 1px solid rgba(232,240,255,0.1);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .innovation-item {
-      padding: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .innovation-item {
-      padding: 1rem;
-    }
   }
 
   .innovation-item:hover {
@@ -776,25 +469,6 @@
     letter-spacing: 0.1em;
     margin-bottom: 0.8rem;
     font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .innovation-category {
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-    }
-  }
-
-  .innovation-category::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: inline-block;
   }
 
   .innovation-value {
@@ -802,34 +476,9 @@
     font-weight: 700;
     color: var(--ice);
     line-height: 1.3;
-    margin-top: auto;
   }
 
-  @media (max-width: 768px) {
-    .innovation-value {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .innovation-value {
-      font-size: 1.1rem;
-    }
-  }
-
-  .innovation-description {
-    font-size: 0.9rem;
-    color: var(--silver-medium);
-    line-height: 1.5;
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .innovation-description {
-      font-size: 0.85rem;
-    }
-  }
-
+  /* INFO GRID */
   .info-grid{
     display:grid;
     grid-template-columns: 1fr;
@@ -842,37 +491,12 @@
     }
   }
 
-  @media (min-width: 768px) {
-    .info-grid{
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap:1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .info-grid {
-      gap: 0.8rem;
-    }
-  }
-
   .info-item{
     background: rgba(232,240,255,0.03);
-    padding:1.2rem;
+    padding:1rem;
     border-radius: var(--radius-sm);
     border-left: 3px solid var(--secondary);
     transition: all 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    .info-item {
-      padding: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .info-item {
-      padding: 0.9rem;
-    }
   }
 
   .info-item:hover{
@@ -889,12 +513,6 @@
     font-weight:500;
   }
 
-  @media (max-width: 768px) {
-    .info-label {
-      font-size: 0.8rem;
-    }
-  }
-
   .info-value{
     font-size:1.1rem;
     font-weight:600;
@@ -902,55 +520,20 @@
     line-height: 1.3;
   }
 
-  @media (max-width: 768px) {
-    .info-value {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .info-value {
-      font-size: 0.95rem;
-    }
-  }
-
-  /* ====== RIGHT COLUMN - BOTÕES DE CONTATO ====== */
+  /* ACTION PANEL */
   .action-panel{
     background: rgba(232,240,255,0.03);
     border-radius: var(--radius-md);
     padding: 1.5rem;
     border: 1px solid rgba(232,240,255,0.1);
     position: relative;
-    height: auto;
-    order: 1;
-  }
-
-  @media (max-width: 768px) {
-    .action-panel {
-      padding: 1.2rem;
-      border-radius: 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .action-panel {
-      padding: 1rem;
-      order: 0;
-    }
   }
 
   @media (min-width: 768px) {
     .action-panel{
-      padding: 2rem;
       position: sticky;
       top: 2rem;
-      order: 0;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .action-panel{
-      padding: 2.5rem;
+      height: fit-content;
     }
   }
 
@@ -962,13 +545,6 @@
     color: var(--silver-light);
   }
 
-  @media (max-width: 768px) {
-    .panel-title {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-  }
-
   .panel-subtitle{
     color: var(--silver-medium);
     margin-bottom:1.5rem;
@@ -976,14 +552,7 @@
     font-size:1rem;
   }
 
-  @media (max-width: 768px) {
-    .panel-subtitle {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-    }
-  }
-
+  /* CONTACT BUTTONS */
   .contact-info{
     background: rgba(74,158,255,0.1);
     border-radius: var(--radius-sm);
@@ -993,21 +562,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-  }
-
-  @media (max-width: 768px) {
-    .contact-info {
-      padding: 1rem;
-      gap: 0.7rem;
-      margin-bottom: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contact-info {
-      padding: 0.9rem;
-      gap: 0.6rem;
-    }
   }
 
   .contact-button {
@@ -1025,21 +579,6 @@
     width: 100%;
   }
 
-  @media (max-width: 768px) {
-    .contact-button {
-      padding: 0.9rem;
-      gap: 0.7rem;
-      border-radius: 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contact-button {
-      padding: 0.8rem;
-      gap: 0.6rem;
-    }
-  }
-
   .contact-button:hover {
     background: rgba(74,158,255,0.15);
     border-color: rgba(74,158,255,0.3);
@@ -1049,13 +588,6 @@
   .contact-button.whatsapp:hover {
     background: rgba(37, 211, 102, 0.15);
     border-color: rgba(37, 211, 102, 0.3);
-  }
-
-  @media (min-width: 768px) {
-    .contact-button{
-      gap:1rem;
-      padding: 1.2rem;
-    }
   }
 
   .contact-icon{
@@ -1070,36 +602,10 @@
     font-size: 1.1rem;
   }
 
-  @media (max-width: 768px) {
-    .contact-icon {
-      width: 32px;
-      height: 32px;
-      font-size: 1rem;
-      border-radius: 8px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contact-icon {
-      width: 30px;
-      height: 30px;
-      font-size: 0.95rem;
-    }
-  }
-
   .contact-button.whatsapp .contact-icon {
     background: rgba(37, 211, 102, 0.2);
   }
 
-  @media (min-width: 768px) {
-    .contact-icon{
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-    }
-  }
-
-  /* ====== AJUSTES PARA EVITAR QUEBRA DE TEXTO NOS CONTATOS ====== */
   .contact-text {
     flex: 1;
     min-width: 0;
@@ -1116,18 +622,6 @@
     letter-spacing: 0.05em;
   }
 
-  @media (max-width: 768px) {
-    .contact-label {
-      font-size: 0.8rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contact-label {
-      font-size: 0.75rem;
-    }
-  }
-
   .contact-value{
     font-weight:600;
     font-size:1rem;
@@ -1139,19 +633,6 @@
     color: var(--ice);
   }
 
-  @media (max-width: 768px) {
-    .contact-value {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contact-value {
-      font-size: 0.85rem;
-      letter-spacing: -0.01em;
-    }
-  }
-
   .contact-copy-icon {
     opacity: 0.6;
     transition: opacity 0.3s ease;
@@ -1159,24 +640,13 @@
     flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .contact-copy-icon {
-      font-size: 0.9rem;
-    }
-  }
-
   .contact-button:hover .contact-copy-icon {
     opacity: 1;
   }
 
+  /* TAGS */
   .tags-container{
     margin-top:1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .tags-container {
-      margin-top: 1.2rem;
-    }
   }
 
   .tags-title{
@@ -1187,30 +657,10 @@
     color: var(--silver-light);
   }
 
-  @media (max-width: 768px) {
-    .tags-title {
-      font-size: 1rem;
-      margin-bottom: 0.8rem;
-    }
-  }
-
   .tags-grid{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     gap:0.6rem;
-  }
-
-  @media (max-width: 768px) {
-    .tags-grid {
-      gap: 0.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .tags-grid{
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.5rem;
-    }
   }
 
   .tag{
@@ -1224,21 +674,6 @@
     transition: all 0.3s ease;
   }
 
-  @media (max-width: 768px) {
-    .tag {
-      padding: 0.6rem 0.7rem;
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .tag {
-      padding: 0.5rem 0.6rem;
-      font-size: 0.8rem;
-      border-radius: 6px;
-    }
-  }
-
   .tag:hover{
     background: rgba(74,158,255,0.1);
     border-color: rgba(74,158,255,0.3);
@@ -1246,24 +681,12 @@
     transform: translateY(-2px);
   }
 
-  /* ====== FOOTER SIMPLIFICADO ====== */
+  /* FOOTER */
   .card-footer{
     padding: 1.5rem;
     border-top: 1px solid rgba(232,240,255,0.1);
     text-align:center;
     background: rgba(10,21,37,0.5);
-  }
-
-  @media (max-width: 768px) {
-    .card-footer {
-      padding: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card-footer {
-      padding: 1rem;
-    }
   }
 
   .footer-text{
@@ -1274,20 +697,13 @@
     margin: 0 auto;
   }
 
-  @media (max-width: 768px) {
-    .footer-text {
-      font-size: 0.85rem;
-      line-height: 1.4;
-    }
-  }
-
   .footer-text strong{
     color: var(--silver-light);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight:700;
   }
 
-  /* ====== ANIMAÇÕES ====== */
+  /* ANIMAÇÕES */
   @keyframes slideUp{
     from{
       opacity:0;
@@ -1307,155 +723,205 @@
   .delay-2{ animation-delay: 0.4s; opacity:0; }
   .delay-3{ animation-delay: 0.6s; opacity:0; }
 
-  /* ====== RESPONSIVO ESPECÍFICO ====== */
-  @media (max-width: 375px) {
-    .intro-container {
-      padding: 1rem;
-    }
-    
-    .intro-title {
-      font-size: clamp(2rem, 5vw, 2.5rem);
-    }
-    
-    .title-main {
-      font-size: clamp(2rem, 5vw, 2.5rem);
-    }
-    
-    .title-sub {
-      font-size: clamp(0.75rem, 2vw, 1rem);
-      letter-spacing: 0.08em;
-    }
-    
-    .intro-message {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-    }
-    
-    .invite-title {
-      font-size: 1.2rem;
-      line-height: 1.4;
-    }
-    
-    .invite-subtitle {
-      font-size: 0.85rem;
-      line-height: 1.4;
-    }
-    
-    .detail-content, .innovations-text {
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
+  /* ====== NOVO BOTÃO CTA DESTACADO ====== */
+  .cta-section {
+    grid-column: 1 / -1;
+    margin: 1.5rem 0;
   }
 
-  /* Para tablets em modo retrato */
-  @media (min-width: 481px) and (max-width: 768px) {
+  .cta-container {
+    background: linear-gradient(135deg, rgba(10, 21, 37, 0.9) 0%, rgba(14, 28, 48, 0.95) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    border: 1px solid rgba(232, 240, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .cta-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(74, 158, 255, 0.15) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF0000 0%, #FF6B6B 100%);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--ice);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-heading span {
+    background: linear-gradient(135deg, #4A9EFF 0%, #8BC6FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+    color: var(--silver-medium);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* BOTÃO PRINCIPAL */
+  .cta-button-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #4A9EFF 0%, #8BC6FF 100%);
+    color: var(--bg0);
+    text-decoration: none;
+    border-radius: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+      0 10px 30px rgba(74, 158, 255, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .cta-button-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cta-button-main:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 
+      0 20px 50px rgba(74, 158, 255, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  }
+
+  .cta-button-main:hover::before {
+    opacity: 1;
+  }
+
+  .cta-button-main:active {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .cta-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button-main:hover .cta-icon {
+    transform: translateX(5px);
+  }
+
+  .cta-sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkle 4s infinite;
+    z-index: 1;
+  }
+
+  .cta-sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+  .cta-sparkle:nth-child(2) { top: 60%; right: 15%; animation-delay: 1s; }
+  .cta-sparkle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
     .content-grid {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
     }
     
-    .event-wide, .full-row {
-      grid-column: 1;
+    .cta-container {
+      padding: 2rem 1.5rem;
     }
     
-    .action-panel {
-      order: -1;
+    .cta-button-main {
+      padding: 1.2rem 2rem;
+      font-size: 1.1rem;
     }
     
-    .innovations-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* Para telas muito largas */
-  @media (min-width: 1400px) {
-    .invite-card {
-      width: min(1300px, 95vw);
-    }
-    
-    .content-grid {
-      padding: 4rem;
+    .cta-heading {
+      font-size: 1.8rem;
     }
     
     .innovations-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 
-  @media (prefers-reduced-motion: reduce){
-    *{
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* Ajuste especial para evitar quebra em emails longos */
-  .email-button .contact-value {
-    word-break: keep-all;
-    overflow-wrap: normal;
-    letter-spacing: -0.01em;
-  }
-
-  /* Melhorias para orientação paisagem em mobile */
-  @media (max-height: 600px) and (orientation: landscape) {
-    .intro-container {
-      flex-direction: row;
-      gap: 2rem;
-      padding: 1rem;
+  @media (max-width: 480px) {
+    .cta-button-main {
+      width: 100%;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
     }
     
-    .intro-logo {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 0;
+    .cta-heading {
+      font-size: 1.5rem;
     }
     
-    .swiss-cross {
-      width: 70px;
-      height: 70px;
-    }
-    
-    .cross-vertical {
-      width: 20px;
-      height: 70px;
-    }
-    
-    .cross-horizontal {
-      width: 70px;
-      height: 20px;
-    }
-    
-    .intro-text {
-      text-align: left;
-      max-width: 60%;
-    }
-    
-    .intro-title {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    .title-sub {
-      margin-top: 0;
-    }
-    
-    .innovations-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .cta-description {
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 
 <body>
-  <!-- Background Artístico Azul Prata -->
+  <!-- Background -->
   <div class="background-art">
     <div class="silver-grid"></div>
     <div class="floating-dots"></div>
   </div>
 
-  <!-- Introdução com Bandeira Suíça Correta -->
+  <!-- Introdução -->
   <div class="intro-container" id="introContainer">
     <div class="intro-logo">
       <div class="swiss-loader">
@@ -1479,15 +945,13 @@
       <div class="intro-loading">
         <div class="intro-progress"></div>
       </div>
-      
-      <p class="intro-message">CARREGANDO EXPERIÊNCIA...</p>
     </div>
   </div>
 
   <!-- Conteúdo Principal -->
   <div class="main-container">
     <div class="invite-card">
-      <!-- Header com Logo Centralizado -->
+      <!-- Header -->
       <div class="card-header">
         <div class="header-content">
           <div class="brand-section animate-in">
@@ -1498,11 +962,10 @@
             </div>
           
             <h2 class="invite-title animate-in delay-2">
-              Convidamos você para um encontro exclusivo no maior evento de <span>odontologia mundial</span>
+              Convidamos você para um encontro exclusivo no maior evento de <span>odontologia mundial</span>, onde teremos também o relançamento global da marca edelwhite swiss.
             </h2>
             <p class="invite-subtitle animate-in delay-3">
-              Uma oportunidade única para conhecer as mais recentes inovações em saúde bucal, 
-              desenvolvidas com a precisão e excelência que são marcas registradas da Suíça.
+              Uma oportunidade única para conhecer as mais recentes inovações em saúde bucal.
             </p>
           </div>
         </div>
@@ -1511,7 +974,7 @@
       <!-- Content Grid -->
       <div class="content-grid">
         <!-- Seção de Evento -->
-        <div class="detail-card animate-in delay-1 event-wide">
+        <div class="detail-card animate-in delay-1">
           <div class="detail-header">
             <div class="detail-icon">🦷</div>
             <h3 class="detail-title">O Evento</h3>
@@ -1545,7 +1008,7 @@
         <div class="action-panel animate-in delay-3">
           <h3 class="panel-title">Informações</h3>
           <p class="panel-subtitle">
-            Entre em contato para agendar seu horário exclusivo ou obter mais informações sobre nosso encontro.
+            Entre em contato para agendar seu horário exclusivo ou obter mais informações.
           </p>
           
           <div class="contact-info">
@@ -1593,8 +1056,8 @@
           </div>
         </div>
 
-        <!-- Seção de Inovações CORRIGIDA -->
-        <div class="detail-card animate-in delay-2 full-row">
+        <!-- Seção de Inovações -->
+        <div class="detail-card animate-in delay-2">
           <div class="detail-header">
             <div class="detail-icon">💡</div>
             <h3 class="detail-title">Inovações</h3>
@@ -1602,39 +1065,61 @@
           
           <div class="innovations-container">
             <p class="innovations-text">
-              Este momento marca também o relançamento da Edel White. Uma nova fase que reflete nossa evolução: 
-              nova identidade visual, novas cores, novo design e uma atitude ainda mais próxima do cliente. 
-              Mais do que uma mudança estética, este reposicionamento reforça nosso compromisso com qualidade, 
-              inovação e confiança, pilares que norteiam cada produto, cada detalhe e cada relação que construímos. 
-              Convidamos você a vivenciar essa transformação conosco, conhecer de perto nossas novidades e celebrar 
-              uma marca que evolui para cuidar melhor de cada sorriso.
+O relançamento global de 2026 é mais do que um novo ciclo de produtos; é uma redefinição fundamental do nosso propósito e do nosso mercado. Estamos fazendo a transição de uma empresa de higiene oral para uma líder em bem-estar oral - inteligente, holística e profundamente focada na longevidade. Um novo capítulo da nossa história. 
+Esta não é apenas uma evolução de marca; é uma revolução de mercado. Como nossos valiosos parceiros de vendas, vocês são a força motriz por trás desta transformação.
+Convidamos você a vivenciar essa transformação conosco, conhecer de perto a nossa visão, a estratégia e o conhecimento de produto essenciais necessários para liderar essa mudança e alcançar um sucesso sem precedentes na nova era da saúde oral.
+
+
             </p>
             
             <div class="innovations-grid">
               <div class="innovation-item">
-                <div class="innovation-category">TECNOLOGIA</div>
-                <div class="innovation-value">Precisão Suíça</div>
-                <div class="innovation-description">Excelência técnica e qualidade superior</div>
+                <div class="innovation-category">LONGEVIDADE</div>
+                <div class="innovation-value">Bem estar</div>
               </div>
               
               <div class="innovation-item">
-                <div class="innovation-category">CORES</div>
-                <div class="innovation-value">Moderno & Sofisticado</div>
-                <div class="innovation-description">Nova paleta de cores e identidade visual</div>
+                <div class="innovation-category">FASHION</div>
+                <div class="innovation-value">Design & Cores novas</div>
               </div>
               
               <div class="innovation-item">
-                <div class="innovation-category">ATITUDE</div>
-                <div class="innovation-value">Próxima & Confiável</div>
-                <div class="innovation-description">Atendimento personalizado e relação de confiança</div>
+                <div class="innovation-category">INOVAÇÃO</div>
+                <div class="innovation-value">Pesquisa & Desenvolvimento</div>
               </div>
               
               <div class="innovation-item">
-                <div class="innovation-category">DESIGN</div>
-                <div class="innovation-value">Conforto & Segurança</div>
-                <div class="innovation-description">Ergonomia aprimorada para melhor experiência</div>
+                <div class="innovation-category">COMPROMISSO</div>
+                <div class="innovation-value">Limpeza profunda & Equilíbrio bucal</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- NOVO CTA DESTACADO -->
+        <div class="cta-section animate-in delay-3">
+          <div class="cta-container">
+            <div class="cta-sparkle"></div>
+            <div class="cta-sparkle"></div>
+            <div class="cta-sparkle"></div>
+            
+            <div class="cta-badge">Lançamento 2026</div>
+            
+            <h2 class="cta-heading">
+              Venha conferir nossas <span>novidades</span>
+            </h2>
+            
+            <p class="cta-description">
+              Acesse a apresentação completa e descubra tudo sobre o relançamento global da Edelwhite Swiss.
+            </p>
+            
+            <a href="https://gamma.app/docs/PT-Edelwhite-2026-New-swiss-premium-oral-care--gcj32cjep15tylb?mode=doc"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="cta-button-main">
+              <span>Abrir Apresentação Completa</span>
+              <span class="cta-icon">↗</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1649,22 +1134,16 @@
   </div>
 
 <script>
-  // ====== INTRODUÇÃO PROLONGADA (10 segundos) ======
+  // ====== INTRODUÇÃO ======
   const introContainer = document.getElementById('introContainer');
   
-  // Configuração do tempo da introdução (10000ms = 10 segundos)
-  const INTRO_DURATION = 10000;
-  
-  // Função para esconder a introdução
   function hideIntro() {
     introContainer.classList.add('intro-hidden');
   }
   
-  // Iniciar introdução automaticamente
-  setTimeout(hideIntro, INTRO_DURATION);
+  setTimeout(hideIntro, 8000);
   
-  // ====== ANIMAÇÕES DE ENTRADA ======
-  // Observar elementos para animação quando entrarem na viewport
+  // ====== ANIMAÇÕES ======
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -1678,29 +1157,24 @@
     });
   }, observerOptions);
   
-  // Observar todos os elementos com classe animate-in
   document.querySelectorAll('.animate-in').forEach(el => {
     el.style.animationPlayState = 'paused';
     observer.observe(el);
   });
   
-  // ====== FUNÇÃO PARA COPIAR EMAIL (ATUALIZADA) ======
+  // ====== FUNÇÃO PARA COPIAR EMAIL ======
   async function copyEmail(btn, email) {
     try {
-      // tenta copiar
       await navigator.clipboard.writeText(email);
 
-      // elementos do botão
       const labelEl = btn.querySelector('.contact-label');
       const valueEl = btn.querySelector('.contact-value');
       const iconEl  = btn.querySelector('.contact-copy-icon');
 
-      // guarda originais
       const originalLabel = labelEl ? labelEl.textContent : '';
       const originalValue = valueEl ? (valueEl.dataset.email || valueEl.textContent) : '';
       const originalIcon  = iconEl ? iconEl.textContent : '';
 
-      // feedback
       if (labelEl) labelEl.textContent = '✓ COPIADO!';
       if (valueEl) valueEl.textContent = email;
       if (iconEl)  iconEl.textContent  = '✓';
@@ -1719,7 +1193,6 @@
       }, 1800);
 
     } catch (err) {
-      // fallback (caso clipboard bloqueado)
       try {
         const temp = document.createElement('textarea');
         temp.value = email;
@@ -1738,11 +1211,10 @@
     }
   }
   
-  // ====== EFEITO DE PARTÍCULAS AZUIS ======
+  // ====== EFEITO DE PARTÍCULAS ======
   function createSilverParticles() {
     const particlesContainer = document.querySelector('.background-art');
     
-    // Criar partículas prateadas
     for (let i = 0; i < 15; i++) {
       const particle = document.createElement('div');
       particle.style.position = 'absolute';
@@ -1753,7 +1225,6 @@
       particle.style.left = Math.random() * 100 + '%';
       particle.style.top = Math.random() * 100 + '%';
       
-      // Animação
       particle.animate([
         { transform: 'translateY(0px)', opacity: 0 },
         { transform: `translateY(${Math.random() * 80 - 40}px)`, opacity: 0.7 },
@@ -1768,41 +1239,7 @@
     }
   }
   
-  // Iniciar partículas após a introdução
-  setTimeout(createSilverParticles, INTRO_DURATION + 1000);
-  
-  // ====== EFEITO DE HOVER NAS TAGS E CARDS ======
-  document.querySelectorAll('.tag, .innovation-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-4px)';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-    });
-  });
-  
-  // ====== AJUSTE DE TAMANHO PARA DISPOSITIVOS MÓVEIS ======
-  function adjustForMobile() {
-    if (window.innerWidth <= 768) {
-      // Ajustar tamanhos de fonte para mobile
-      document.querySelectorAll('.detail-content, .innovations-text, .panel-subtitle').forEach(el => {
-        const currentSize = parseFloat(window.getComputedStyle(el).fontSize);
-        if (currentSize > 16) {
-          el.style.fontSize = '0.95rem';
-        }
-      });
-      
-      // Ajustar padding para economizar espaço
-      document.querySelectorAll('.detail-card, .action-panel').forEach(el => {
-        el.style.padding = '1rem';
-      });
-    }
-  }
-  
-  // Executar ao carregar e redimensionar
-  window.addEventListener('load', adjustForMobile);
-  window.addEventListener('resize', adjustForMobile);
+  setTimeout(createSilverParticles, 9000);
 </script>
 </body>
 </html>
