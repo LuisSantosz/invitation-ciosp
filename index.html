@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Edel White | Convite CIOSP 2026</title>
 
+<!-- ✅ Anti “modo leitura” + comportamento mobile -->
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="theme-color" content="#0A1525">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <!-- Fontes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,6 +251,34 @@
     position:relative;
     margin: 0 auto;
   }
+
+  /* ✅ TOPBAR (deixa “cara de landing/app” e reduz modo leitura) */
+  .topbar{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    padding:12px;
+    border-bottom: 1px solid rgba(232,240,255,0.10);
+    background: rgba(10,21,37,0.35);
+  }
+  .topbar-btn{
+    text-decoration:none;
+    color: var(--silver-light);
+    font-weight:800;
+    font-size: 0.9rem;
+    padding:10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(232,240,255,0.12);
+    background: rgba(232,240,255,0.05);
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .topbar-btn:hover{
+    transform: translateY(-2px);
+    background: rgba(74,158,255,0.12);
+    border-color: rgba(74,158,255,0.28);
+  }
+
 
   .card-header{
     padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem);
@@ -922,6 +956,9 @@
     .tags-grid { grid-template-columns: repeat(2, 1fr); }
     .card-footer { padding: 1.2rem; }
     .footer-text { font-size: 0.85rem; }
+
+    .topbar{ flex-wrap: wrap; }
+    .topbar-btn{ flex: 1 1 auto; text-align:center; }
   }
 
   @media (max-width: 480px) {
@@ -988,40 +1025,45 @@
   }
 
   /* ===== FIX: textos longos cortando no mobile ===== */
-.info-value,
-.detail-content,
-.innovations-wide-text,
-.innovation-category,
-.innovation-value,
-.tag,
-.invite-title,
-.invite-subtitle{
-  white-space: normal !important;
-  overflow-wrap: anywhere !important;
-  word-break: break-word !important;
-  hyphens: auto;
-}
+  .info-value,
+  .detail-content,
+  .innovations-wide-text,
+  .innovation-category,
+  .innovation-value,
+  .tag,
+  .invite-title,
+  .invite-subtitle{
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    hyphens: auto;
+  }
 
-/* Garante que os itens não “escondam” o texto */
-.innovation-item,
-.info-item,
-.detail-card,
-.action-panel{
-  overflow: visible !important;
-}
+  /* Garante que os itens não “escondam” o texto */
+  .innovation-item,
+  .info-item,
+  .detail-card,
+  .action-panel{
+    overflow: visible !important;
+  }
 
-/* Caso algum elemento esteja estourando a largura */
-.invite-card,
-.content-grid,
-.innovations-wide,
-.cta-container{
-  max-width: 100%;
-}
+  /* Caso algum elemento esteja estourando a largura */
+  .invite-card,
+  .content-grid,
+  .innovations-wide,
+  .cta-container{
+    max-width: 100%;
+  }
 
+  /* ✅ Se em algum celular “grudar” no gesto do rodapé */
+  .main-container{
+    padding-bottom: calc(clamp(0.75rem, 2vw, 1.25rem) + 24px + env(safe-area-inset-bottom));
+  }
 </style>
 </head>
 
-<body>
+<!-- ✅ ajuda a reduzir gatilho do Reader Mode -->
+<body role="application">
   <!-- Background -->
   <div class="background-art">
     <div class="silver-grid"></div>
@@ -1059,6 +1101,15 @@
   <!-- Conteúdo Principal -->
   <div class="main-container">
     <div class="invite-card">
+
+      <!-- ✅ TOPBAR + abrir no navegador (melhora MUITO em celulares recentes) -->
+      <div class="topbar">
+        <a class="topbar-btn" href="#info">Informações</a>
+        <a class="topbar-btn" href="#inov">Inovações</a>
+        <a class="topbar-btn" href="#cta">Apresentação</a>
+      </div>
+      
+
       <!-- Header -->
       <div class="card-header">
         <div class="header-content">
@@ -1113,7 +1164,7 @@
         </div>
 
         <!-- Painel de Informações -->
-        <div class="action-panel animate-in delay-3">
+        <div class="action-panel animate-in delay-3" id="info">
           <h3 class="panel-title">Informações</h3>
           <p class="panel-subtitle">
             Entre em contato para agendar seu horário exclusivo ou obter mais informações.
@@ -1166,7 +1217,7 @@
         </div>
 
         <!-- INOVAÇÕES (FULL WIDTH) -->
-        <div class="innovations-section animate-in delay-2">
+        <div class="innovations-section animate-in delay-2" id="inov">
           <div class="innovations-wide">
             <div class="innovations-wide-header">
               <div class="innovations-wide-icon">💡</div>
@@ -1208,7 +1259,7 @@
         </div>
 
         <!-- CTA -->
-        <div class="cta-section animate-in delay-3">
+        <div class="cta-section animate-in delay-3" id="cta">
           <div class="cta-container">
             <div class="cta-sparkle"></div>
             <div class="cta-sparkle"></div>
@@ -1245,6 +1296,14 @@
 <script>
   // ✅ trava scroll só enquanto a intro estiver ativa (evita bugs em mobile)
   document.body.style.overflow = 'hidden';
+
+  // ✅ Botão “Abrir no navegador”
+  (function(){
+    const a = document.getElementById('openBrowser');
+    if(a){
+      a.href = window.location.href;
+    }
+  })();
 
   // ====== INTRO ======
   const introContainer = document.getElementById('introContainer');
