@@ -70,7 +70,7 @@
     background-size: 100px 100px;
   }
 
-  /* ===================== INTRO (VERSÃO ANTERIOR) ===================== */
+  /* ===================== INTRO (CORREÇÃO DO ESPAÇAMENTO) ===================== */
   .intro-container{
     position:fixed;
     inset:0;
@@ -81,7 +81,7 @@
     background: var(--bg0);
     z-index:1000;
     transition: opacity 1.5s ease, transform 1.5s ease;
-    padding: 2rem;
+    padding: clamp(1rem, 4vh, 3rem); /* Melhor espaçamento responsivo */
   }
 
   .intro-hidden{
@@ -91,9 +91,9 @@
   }
 
   .intro-logo{
-    width: 250px;
-    height: 250px;
-    margin-bottom: 2rem;
+    width: min(250px, 70vw);
+    height: min(250px, 70vw);
+    margin-bottom: clamp(1.5rem, 4vh, 3rem); /* Espaçamento ajustável */
     position:relative;
   }
 
@@ -143,40 +143,41 @@
 
   .intro-text{
     text-align:center;
-    max-width: 800px;
+    max-width: min(800px, 90vw);
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
   .intro-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(1.8rem, 6vw, 4rem);
     font-weight:800;
-    margin-bottom:0.5rem;
+    margin-bottom: clamp(0.8rem, 2vh, 1.5rem); /* Melhor espaçamento */
     color: var(--silver-light);
     letter-spacing: -0.02em;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:0.2rem;
+    gap:0.5rem; /* Espaçamento entre linhas */
   }
 
   .title-sub{
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-size: clamp(0.7rem, 2.5vw, 1.2rem);
     color: var(--silver-medium);
     font-weight:600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin-top: 0.5rem;
+    margin-top: clamp(0.3rem, 1vh, 0.5rem);
+    line-height: 1.4;
   }
 
   .intro-loading{
-    width: min(300px, 90%);
+    width: min(300px, 85vw);
     height: 4px;
     background: rgba(232,240,255,0.1);
     border-radius: 2px;
     overflow:hidden;
-    margin: 0 auto 2rem;
+    margin: clamp(1.5rem, 4vh, 3rem) auto; /* Melhor espaçamento vertical */
   }
 
   .intro-progress{
@@ -193,12 +194,12 @@
   }
 
   .intro-footer {
-    margin-top: 2rem;
+    margin-top: clamp(1.5rem, 4vh, 3rem);
     text-align: center;
   }
 
   .longevity-logo {
-    max-width: 200px;
+    max-width: min(200px, 60vw);
     height: auto;
   }
 
@@ -208,7 +209,7 @@
     min-height:100vh;
     display:grid;
     place-items:center;
-    padding: 1rem;
+    padding: clamp(0.5rem, 2vw, 1rem); /* Padding responsivo */
     z-index:2;
     opacity:0;
     animation: fadeIn 1s 8s forwards;
@@ -218,6 +219,7 @@
 
   .invite-card{
     width: min(1100px, 95vw);
+    max-width: 95vw; /* Limitar largura máxima */
     background: rgba(14, 28, 48, 0.7);
     backdrop-filter: blur(20px);
     border-radius: var(--radius-lg);
@@ -225,10 +227,11 @@
     box-shadow: var(--shadow-xl);
     overflow:hidden;
     position:relative;
+    margin: 0 auto; /* Centralizar */
   }
 
   .card-header{
-    padding: 2rem 1.5rem 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem);
     position:relative;
     overflow:hidden;
     background:
@@ -247,19 +250,19 @@
 
   .brand-section{
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
   }
 
   .logo-container{
     position:relative;
     width: 100%;
-    max-width: 500px;
+    max-width: min(500px, 90vw);
     height: auto;
     aspect-ratio: 2/1;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto clamp(1rem, 3vw, 1.5rem);
   }
 
   .new-logo img{
@@ -272,14 +275,15 @@
 
   .invite-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.8rem);
     font-weight:600;
     line-height:1.3;
-    margin-bottom:1rem;
+    margin-bottom:clamp(0.8rem, 2vw, 1rem);
     color: var(--ice);
-    max-width: 800px;
+    max-width: min(800px, 95vw);
     text-align: center;
     margin: 0 auto;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
   .invite-title span{
@@ -290,41 +294,42 @@
   }
 
   .invite-subtitle{
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
     color: var(--silver-medium);
     line-height:1.5;
-    max-width: 700px;
+    max-width: min(700px, 95vw);
     margin: 0 auto;
     text-align: center;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
   .content-grid{
     display:grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(1rem, 2vw, 1.5rem);
   }
 
   @media (min-width: 768px) {
     .content-grid{
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      padding: 2rem;
+      gap: clamp(1.5rem, 3vw, 2rem);
+      padding: clamp(1.5rem, 3vw, 2rem);
     }
   }
 
   @media (min-width: 1024px) {
     .content-grid{
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      padding: 2.5rem;
+      gap: clamp(2rem, 4vw, 2.5rem);
+      padding: clamp(2rem, 4vw, 2.5rem);
     }
   }
 
   .detail-card{
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: clamp(1.2rem, 3vw, 1.5rem);
     border: 1px solid rgba(232,240,255,0.1);
     transition: all 0.4s ease;
     position:relative;
@@ -354,26 +359,26 @@
   .detail-header{
     display:flex;
     align-items:center;
-    gap:1rem;
-    margin-bottom:1.5rem;
+    gap:clamp(0.8rem, 2vw, 1rem);
+    margin-bottom:clamp(1rem, 2vw, 1.5rem);
   }
 
   .detail-icon{
-    width: 50px;
-    height: 50px;
+    width: clamp(45px, 8vw, 50px);
+    height: clamp(45px, 8vw, 50px);
     border-radius: var(--radius-sm);
     background: rgba(74,158,255,0.15);
     border: 1px solid rgba(74,158,255,0.3);
     display:grid;
     place-items:center;
     color: var(--silver-light);
-    font-size:1.3rem;
+    font-size:clamp(1.2rem, 2vw, 1.3rem);
     flex-shrink: 0;
   }
 
   .detail-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size:1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
     font-weight:700;
     color: var(--silver-light);
     line-height: 1.2;
@@ -382,14 +387,14 @@
   .detail-content{
     color: var(--silver-medium);
     line-height:1.6;
-    font-size:1rem;
-    margin-bottom:1.5rem;
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
 
   .info-grid{
     display:grid;
     grid-template-columns: 1fr;
-    gap:1rem;
+    gap: clamp(0.8rem, 1.5vw, 1rem);
   }
 
   @media (min-width: 480px) {
@@ -398,7 +403,7 @@
 
   .info-item{
     background: rgba(232,240,255,0.03);
-    padding:1rem;
+    padding: clamp(0.8rem, 1.5vw, 1rem);
     border-radius: var(--radius-sm);
     border-left: 3px solid var(--secondary);
     transition: all 0.3s ease;
@@ -410,16 +415,16 @@
   }
 
   .info-label{
-    font-size:0.85rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     color: rgba(232,240,255,0.6);
     text-transform:uppercase;
     letter-spacing:0.08em;
-    margin-bottom:0.5rem;
+    margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
     font-weight:500;
   }
 
   .info-value{
-    font-size:1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     font-weight:600;
     color: var(--ice);
     line-height: 1.3;
@@ -428,7 +433,7 @@
   .action-panel{
     background: rgba(232,240,255,0.03);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: clamp(1.2rem, 3vw, 1.5rem);
     border: 1px solid rgba(232,240,255,0.1);
     position: relative;
   }
@@ -443,39 +448,39 @@
 
   .panel-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size:1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
     font-weight:700;
-    margin-bottom:1.2rem;
+    margin-bottom:clamp(1rem, 2vw, 1.2rem);
     color: var(--silver-light);
   }
 
   .panel-subtitle{
     color: var(--silver-medium);
-    margin-bottom:1.5rem;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     line-height:1.6;
-    font-size:1rem;
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
   }
 
   .contact-info{
     background: rgba(74,158,255,0.1);
     border-radius: var(--radius-sm);
-    padding: 1.2rem;
-    margin-bottom:1.5rem;
+    padding: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     border: 1px solid rgba(74,158,255,0.2);
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: clamp(0.6rem, 1.5vw, 0.8rem);
   }
 
   .contact-button{
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: clamp(0.6rem, 1.5vw, 0.8rem);
     color: var(--silver-light);
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 12px;
-    padding: 1rem;
+    padding: clamp(0.8rem, 1.5vw, 1rem);
     background: rgba(232,240,255,0.05);
     border: 1px solid rgba(232,240,255,0.1);
     text-decoration: none;
@@ -494,15 +499,15 @@
   }
 
   .contact-icon{
-    width: 36px;
-    height: 36px;
+    width: clamp(32px, 6vw, 36px);
+    height: clamp(32px, 6vw, 36px);
     border-radius: 10px;
     background: rgba(74,158,255,0.2);
     display:grid;
     place-items:center;
     color: var(--silver-light);
     flex-shrink: 0;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
   }
 
   .contact-button.whatsapp .contact-icon{
@@ -517,9 +522,9 @@
   }
 
   .contact-label{
-    font-size:0.85rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     color: var(--silver-medium);
-    margin-bottom:0.2rem;
+    margin-bottom: clamp(0.1rem, 0.5vw, 0.2rem);
     display: block;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -527,7 +532,7 @@
 
   .contact-value{
     font-weight:600;
-    font-size:1rem;
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
     line-height: 1.3;
     white-space: nowrap;
     overflow: hidden;
@@ -539,34 +544,34 @@
   .contact-copy-icon{
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     flex-shrink: 0;
   }
 
   .contact-button:hover .contact-copy-icon{ opacity: 1; }
 
-  .tags-container{ margin-top:1.5rem; }
+  .tags-container{ margin-top: clamp(1rem, 2vw, 1.5rem); }
 
   .tags-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size:1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     font-weight:600;
-    margin-bottom:1rem;
+    margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
     color: var(--silver-light);
   }
 
   .tags-grid{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap:0.6rem;
+    gap: clamp(0.5rem, 1vw, 0.6rem);
   }
 
   .tag{
-    padding: 0.7rem 0.8rem;
+    padding: clamp(0.6rem, 1.5vw, 0.7rem) clamp(0.7rem, 1.5vw, 0.8rem);
     background: rgba(232,240,255,0.05);
     border: 1px solid rgba(232,240,255,0.1);
     border-radius: 8px;
-    font-size:0.9rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
     color: var(--silver-medium);
     text-align:center;
     transition: all 0.3s ease;
@@ -580,7 +585,7 @@
   }
 
   .card-footer{
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
     border-top: 1px solid rgba(232,240,255,0.1);
     text-align:center;
     background: rgba(10,21,37,0.5);
@@ -588,9 +593,9 @@
 
   .footer-text{
     color: var(--silver-medium);
-    font-size:0.9rem;
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
     line-height:1.5;
-    max-width: 800px;
+    max-width: min(800px, 95vw);
     margin: 0 auto;
   }
 
@@ -613,13 +618,13 @@
   /* ====== CTA DESTACADO ====== */
   .cta-section{
     grid-column: 1 / -1;
-    margin: 1.5rem 0;
+    margin: clamp(1rem, 2vw, 1.5rem) 0;
   }
 
   .cta-container{
     background: linear-gradient(135deg, rgba(10, 21, 37, 0.9) 0%, rgba(14, 28, 48, 0.95) 100%);
     border-radius: var(--radius-lg);
-    padding: 3rem 2rem;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem);
     border: 1px solid rgba(232, 240, 255, 0.15);
     position: relative;
     overflow: hidden;
@@ -648,10 +653,10 @@
 
   .cta-heading{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
     font-weight: 800;
     color: var(--ice);
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
     line-height: 1.2;
     position: relative;
     z-index: 2;
@@ -665,10 +670,10 @@
   }
 
   .cta-description{
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: var(--silver-medium);
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    max-width: min(600px, 95vw);
+    margin: 0 auto clamp(1.5rem, 3vw, 2rem);
     line-height: 1.6;
     position: relative;
     z-index: 2;
@@ -678,15 +683,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem 3rem;
+    gap: clamp(0.8rem, 2vw, 1rem);
+    padding: clamp(1rem, 2.5vw, 1.5rem) clamp(2rem, 4vw, 3rem);
     background: linear-gradient(135deg, #4A9EFF 0%, #8BC6FF 100%);
     color: var(--bg0);
     text-decoration: none;
     border-radius: 16px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     letter-spacing: -0.01em;
     border: none;
     cursor: pointer;
@@ -719,7 +724,7 @@
 
   .cta-button-main:active{ transform: translateY(-3px) scale(1.01); }
 
-  .cta-icon{ font-size: 1.5rem; transition: transform 0.3s ease; }
+  .cta-icon{ font-size: clamp(1.2rem, 2vw, 1.5rem); transition: transform 0.3s ease; }
   .cta-button-main:hover .cta-icon{ transform: translateX(5px); }
 
   .cta-sparkle{
@@ -744,13 +749,13 @@
   /* ====== INOVAÇÕES (FULL WIDTH no formato do CTA) ====== */
   .innovations-section{
     grid-column: 1 / -1;
-    margin: 0.5rem 0 0;
+    margin: clamp(0.5rem, 1vw, 0.5rem) 0 0;
   }
 
   .innovations-wide{
     background: linear-gradient(135deg, rgba(10, 21, 37, 0.9) 0%, rgba(14, 28, 48, 0.95) 100%);
     border-radius: var(--radius-lg);
-    padding: 3rem 2rem;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem);
     border: 1px solid rgba(232, 240, 255, 0.15);
     position: relative;
     overflow: hidden;
@@ -773,24 +778,24 @@
   .innovations-wide-header{
     display:flex;
     align-items:center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: clamp(0.8rem, 2vw, 1rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
 
   .innovations-wide-icon{
-    width: 52px;
-    height: 52px;
+    width: clamp(45px, 8vw, 52px);
+    height: clamp(45px, 8vw, 52px);
     border-radius: 16px;
     background: rgba(74,158,255,0.15);
     border: 1px solid rgba(74,158,255,0.3);
     display:grid;
     place-items:center;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
   }
 
   .innovations-wide-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-size: clamp(1.3rem, 3.5vw, 2.1rem);
     font-weight: 800;
     color: var(--ice);
     line-height: 1.1;
@@ -806,23 +811,23 @@
   .innovations-wide-text{
     color: var(--silver-medium);
     line-height: 1.75;
-    font-size: 1.05rem;
-    margin-top: 0.5rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+    margin-top: clamp(0.5rem, 1vw, 0.8rem);
     text-align: justify;
   }
 
   .innovations-wide-grid{
     display:grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.1rem;
-    margin-top: 1.6rem;
+    gap: clamp(0.8rem, 1.5vw, 1.1rem);
+    margin-top: clamp(1rem, 2vw, 1.6rem);
   }
 
   /* itens internos (reaproveitados) */
   .innovation-item{
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-sm);
-    padding: 1.2rem;
+    padding: clamp(1rem, 2vw, 1.2rem);
     border: 1px solid rgba(232,240,255,0.1);
     transition: all 0.3s ease;
     display: flex;
@@ -837,16 +842,16 @@
   }
 
   .innovation-category{
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     color: rgba(232,240,255,0.6);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 0.8rem;
+    margin-bottom: clamp(0.6rem, 1.2vw, 0.8rem);
     font-weight: 500;
   }
 
   .innovation-value{
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
     font-weight: 700;
     color: var(--ice);
     line-height: 1.3;
@@ -858,91 +863,351 @@
   }
   @media (max-width: 768px){
     .innovations-wide{
-      padding: 2rem 1.2rem;
+      padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.2rem);
       border-radius: 20px;
     }
     .innovations-wide-grid{ grid-template-columns: 1fr; }
-    .innovations-wide-text{ text-align: left; font-size: 1rem; }
+    .innovations-wide-text{ text-align: left; font-size: clamp(0.9rem, 1.8vw, 1rem); }
+    .innovations-wide-header{ flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .innovations-wide-icon{ width: 45px; height: 45px; font-size: 1.2rem; }
   }
 
-  /* ===== Responsividade original ===== */
+  /* ===== Responsividade específica para celulares ===== */
   @media (max-width: 768px) {
-    .invite-card { border-radius: 24px; margin: 1rem; }
-    .content-grid { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; }
-    .card-header { padding: 1.5rem 1rem 1rem; }
-    .logo-container { max-width: 300px; margin-bottom: 1rem; }
-    .invite-title { font-size: 1.2rem; line-height: 1.4; padding: 0 0.5rem; }
-    .invite-subtitle { font-size: 0.95rem; line-height: 1.4; padding: 0 0.5rem; }
+    .intro-container {
+      padding: 1.5rem 1rem;
+    }
+    
+    .intro-title {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 1rem;
+    }
+    
+    .title-sub {
+      font-size: clamp(0.65rem, 2vw, 0.8rem);
+      line-height: 1.3;
+    }
+    
+    .invite-card { 
+      border-radius: 24px; 
+      margin: 0.5rem;
+      width: calc(100% - 1rem);
+    }
+    
+    .content-grid { 
+      grid-template-columns: 1fr; 
+      gap: 1.2rem; 
+      padding: 1.2rem; 
+    }
+    
+    .card-header { 
+      padding: 1.5rem 1rem 1rem; 
+    }
+    
+    .logo-container { 
+      max-width: 300px; 
+      margin-bottom: 1rem; 
+    }
+    
+    .invite-title { 
+      font-size: 1.2rem; 
+      line-height: 1.4; 
+      padding: 0 0.5rem; 
+    }
+    
+    .invite-subtitle { 
+      font-size: 0.95rem; 
+      line-height: 1.4; 
+      padding: 0 0.5rem; 
+    }
 
-    .detail-card { padding: 1.2rem; border-radius: 18px; }
-    .detail-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-    .detail-icon { width: 45px; height: 45px; }
-    .detail-title { font-size: 1.3rem; }
-    .detail-content { font-size: 0.95rem; }
+    .detail-card { 
+      padding: 1.2rem; 
+      border-radius: 18px; 
+    }
+    
+    .detail-header { 
+      flex-direction: column; 
+      align-items: flex-start; 
+      gap: 0.8rem; 
+    }
+    
+    .detail-icon { 
+      width: 45px; 
+      height: 45px; 
+    }
+    
+    .detail-title { 
+      font-size: 1.3rem; 
+    }
+    
+    .detail-content { 
+      font-size: 0.95rem; 
+    }
 
-    .action-panel { padding: 1.2rem; position: static; }
-    .contact-button { padding: 0.8rem; }
-    .contact-icon { width: 32px; height: 32px; font-size: 1rem; }
-    .contact-value { font-size: 0.95rem; }
+    .action-panel { 
+      padding: 1.2rem; 
+      position: static; 
+    }
+    
+    .contact-button { 
+      padding: 0.8rem; 
+    }
+    
+    .contact-icon { 
+      width: 32px; 
+      height: 32px; 
+      font-size: 1rem; 
+    }
+    
+    .contact-value { 
+      font-size: 0.95rem; 
+    }
 
-    .info-grid { grid-template-columns: 1fr; }
+    .info-grid { 
+      grid-template-columns: 1fr; 
+    }
 
-    .cta-container { padding: 2rem 1.2rem; border-radius: 20px; }
-    .cta-button-main { padding: 1.2rem 2rem; font-size: 1.1rem; width: 100%; justify-content: center; }
-    .cta-heading { font-size: 1.6rem; }
-    .cta-description { font-size: 1rem; }
+    .cta-container { 
+      padding: 1.5rem 1rem; 
+      border-radius: 20px; 
+    }
+    
+    .cta-button-main { 
+      padding: 1rem 1.5rem; 
+      font-size: 1rem; 
+      width: 100%; 
+      justify-content: center; 
+    }
+    
+    .cta-heading { 
+      font-size: 1.4rem; 
+    }
+    
+    .cta-description { 
+      font-size: 0.95rem; 
+    }
 
-    .tags-grid { grid-template-columns: repeat(2, 1fr); }
-    .card-footer { padding: 1.2rem; }
-    .footer-text { font-size: 0.85rem; }
+    .tags-grid { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .card-footer { 
+      padding: 1.2rem; 
+    }
+    
+    .footer-text { 
+      font-size: 0.85rem; 
+    }
   }
 
   @media (max-width: 480px) {
-    .invite-card { border-radius: 20px; margin: 0.5rem; }
-    .content-grid { padding: 1rem; gap: 1rem; }
-    .card-header { padding: 1rem 0.8rem 0.8rem; }
-    .logo-container { max-width: 250px; }
-    .invite-title { font-size: 1.1rem; }
-    .invite-subtitle { font-size: 0.9rem; }
+    .intro-logo { 
+      width: 180px; 
+      height: 180px; 
+      margin-bottom: 1.5rem; 
+    }
+    
+    .intro-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .title-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+    
+    .intro-loading {
+      margin: 1.5rem auto;
+    }
+    
+    .intro-footer {
+      margin-top: 1.5rem;
+    }
+    
+    .longevity-logo {
+      max-width: 150px;
+    }
+    
+    .invite-card { 
+      border-radius: 20px; 
+      margin: 0.5rem; 
+    }
+    
+    .content-grid { 
+      padding: 1rem; 
+      gap: 1rem; 
+    }
+    
+    .card-header { 
+      padding: 1rem 0.8rem 0.8rem; 
+    }
+    
+    .logo-container { 
+      max-width: 250px; 
+    }
+    
+    .invite-title { 
+      font-size: 1.1rem; 
+    }
+    
+    .invite-subtitle { 
+      font-size: 0.9rem; 
+    }
 
-    .detail-card { padding: 1rem; border-radius: 16px; }
-    .detail-title { font-size: 1.2rem; }
-    .detail-content { font-size: 0.9rem; }
+    .detail-card { 
+      padding: 1rem; 
+      border-radius: 16px; 
+    }
+    
+    .detail-title { 
+      font-size: 1.2rem; 
+    }
+    
+    .detail-content { 
+      font-size: 0.9rem; 
+    }
 
-    .contact-info { padding: 1rem; }
-    .contact-button { flex-direction: column; text-align: center; gap: 0.5rem; padding: 0.8rem; }
-    .contact-text { text-align: center; }
-    .contact-copy-icon { display: none; }
+    .contact-info { 
+      padding: 1rem; 
+    }
+    
+    .contact-button { 
+      flex-direction: row; /* Mantém em linha mesmo em celular */
+      text-align: left; 
+      gap: 0.8rem; 
+      padding: 0.8rem; 
+    }
+    
+    .contact-text { 
+      text-align: left; 
+    }
+    
+    .contact-copy-icon { 
+      display: block; /* Mantém visível */
+    }
 
-    .cta-container { padding: 1.5rem 1rem; border-radius: 18px; }
-    .cta-heading { font-size: 1.4rem; }
-    .cta-description { font-size: 0.95rem; }
-    .cta-button-main { padding: 1rem 1.5rem; font-size: 1rem; flex-direction: column; gap: 0.5rem; }
+    .cta-container { 
+      padding: 1.5rem 1rem; 
+      border-radius: 18px; 
+    }
+    
+    .cta-heading { 
+      font-size: 1.3rem; 
+    }
+    
+    .cta-description { 
+      font-size: 0.9rem; 
+    }
+    
+    .cta-button-main { 
+      padding: 1rem 1.5rem; 
+      font-size: 1rem; 
+      flex-direction: row; 
+      gap: 0.5rem; 
+    }
 
-    .tags-grid { grid-template-columns: 1fr; }
+    .tags-grid { 
+      grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
+    }
+    
+    .tag {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
 
-    .intro-logo { width: 200px; height: 200px; margin-bottom: 1.0rem; }
-    .title-sub { font-size: 0.8rem; }
-    .longevity-logo { max-width: 120px; }
+  @media (max-width: 360px) {
+    .contact-button {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .contact-text {
+      text-align: left;
+      width: 100%;
+    }
+    
+    .contact-value {
+      font-size: 0.9rem;
+    }
+    
+    .tags-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .invite-card { width: 90vw; }
-    .content-grid { grid-template-columns: 1fr; padding: 1.8rem; }
-    .logo-container { max-width: 400px; }
-    .detail-card, .action-panel { padding: 1.5rem; }
-    .info-grid { grid-template-columns: repeat(2, 1fr); }
+    .invite-card { 
+      width: 90vw; 
+    }
+    
+    .content-grid { 
+      grid-template-columns: 1fr; 
+      padding: 1.8rem; 
+    }
+    
+    .logo-container { 
+      max-width: 400px; 
+    }
+    
+    .detail-card, .action-panel { 
+      padding: 1.5rem; 
+    }
+    
+    .info-grid { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
   }
 
   @media (max-height: 600px) and (orientation: landscape) {
-    .intro-container { padding: 1rem; }
-    .intro-logo { width: 120px; height: 120px; margin-bottom: 1rem; }
-    .intro-loading { width: 250px; margin-bottom: 1rem; }
-    .longevity-logo { max-width: 100px; }
+    .intro-container { 
+      padding: 0.5rem; 
+      flex-direction: row;
+      gap: 2rem;
+    }
+    
+    .intro-logo { 
+      width: 120px; 
+      height: 120px; 
+      margin-bottom: 0; 
+    }
+    
+    .intro-text {
+      max-width: 60%;
+    }
+    
+    .intro-loading { 
+      width: 250px; 
+      margin-bottom: 1rem; 
+    }
+    
+    .longevity-logo { 
+      max-width: 100px; 
+    }
 
-    .main-container { padding: 0.5rem; }
-    .invite-card { border-radius: 20px; }
-    .content-grid { padding: 1rem; gap: 1rem; }
+    .main-container { 
+      padding: 0.5rem; 
+    }
+    
+    .invite-card { 
+      border-radius: 20px; 
+    }
+    
+    .content-grid { 
+      padding: 1rem; 
+      gap: 1rem; 
+    }
+    
+    .detail-card {
+      padding: 1rem;
+    }
+    
+    .action-panel {
+      padding: 1rem;
+    }
   }
 </style>
 </head>
