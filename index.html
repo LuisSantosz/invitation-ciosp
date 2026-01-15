@@ -45,7 +45,7 @@
     pointer-events:none;
     overflow:hidden;
     z-index:1;
-    background: 
+    background:
       radial-gradient(circle at 20% 30%, rgba(74,158,255,0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 70%, rgba(107,206,255,0.08) 0%, transparent 50%),
       linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 100%);
@@ -54,7 +54,7 @@
   .silver-grid{
     position:absolute;
     inset:0;
-    background-image: 
+    background-image:
       linear-gradient(rgba(232,240,255,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(232,240,255,0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -64,13 +64,13 @@
   .floating-dots{
     position:absolute;
     inset:0;
-    background-image: 
+    background-image:
       radial-gradient(circle at 25% 25%, rgba(232,240,255,0.05) 1px, transparent 1px),
       radial-gradient(circle at 75% 75%, rgba(232,240,255,0.05) 1px, transparent 1px);
     background-size: 100px 100px;
   }
 
-  /* INTRODUÇÃO SIMPLIFICADA */
+  /* ===================== INTRO (VERSÃO ANTERIOR) ===================== */
   .intro-container{
     position:fixed;
     inset:0;
@@ -161,15 +161,6 @@
     gap:0.2rem;
   }
 
-  .title-main{
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    background: var(--gradient-silver);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.1;
-  }
-
   .title-sub{
     font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     color: var(--silver-medium);
@@ -201,7 +192,6 @@
     100%{ width:100%; }
   }
 
-  /* Logo Longevity abaixo da barra de loading */
   .intro-footer {
     margin-top: 2rem;
     text-align: center;
@@ -212,7 +202,7 @@
     height: auto;
   }
 
-  /* LAYOUT PRINCIPAL */
+  /* ===================== LAYOUT PRINCIPAL ===================== */
   .main-container{
     position:relative;
     min-height:100vh;
@@ -224,9 +214,7 @@
     animation: fadeIn 1s 8s forwards;
   }
 
-  @keyframes fadeIn{
-    to{ opacity:1; }
-  }
+  @keyframes fadeIn{ to{ opacity:1; } }
 
   .invite-card{
     width: min(1100px, 95vw);
@@ -239,12 +227,11 @@
     position:relative;
   }
 
-  /* HEADER */
   .card-header{
     padding: 2rem 1.5rem 1.5rem;
     position:relative;
     overflow:hidden;
-    background: 
+    background:
       radial-gradient(circle at 80% 20%, rgba(74,158,255,0.15), transparent 50%),
       radial-gradient(circle at 20% 80%, rgba(107,206,255,0.1), transparent 50%);
     text-align: center;
@@ -311,7 +298,6 @@
     text-align: center;
   }
 
-  /* CONTENT GRID */
   .content-grid{
     display:grid;
     grid-template-columns: 1fr;
@@ -335,7 +321,6 @@
     }
   }
 
-  /* CARDS */
   .detail-card{
     background: rgba(232,240,255,0.05);
     border-radius: var(--radius-md);
@@ -364,9 +349,7 @@
     transition: transform 0.4s ease;
   }
 
-  .detail-card:hover::before{
-    transform: scaleX(1);
-  }
+  .detail-card:hover::before{ transform: scaleX(1); }
 
   .detail-header{
     display:flex;
@@ -403,62 +386,6 @@
     margin-bottom:1.5rem;
   }
 
-  /* INOVAÇÕES */
-  .innovations-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .innovations-text {
-    color: var(--silver-medium);
-    line-height: 1.7;
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    text-align: justify;
-  }
-
-  .innovations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1.5rem;
-  }
-
-  .innovation-item {
-    background: rgba(232,240,255,0.05);
-    border-radius: var(--radius-sm);
-    padding: 1.2rem;
-    border: 1px solid rgba(232,240,255,0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .innovation-item:hover {
-    background: rgba(74,158,255,0.1);
-    border-color: rgba(74,158,255,0.3);
-    transform: translateY(-5px);
-  }
-
-  .innovation-category {
-    font-size: 0.85rem;
-    color: rgba(232,240,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
-  }
-
-  .innovation-value {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--ice);
-    line-height: 1.3;
-  }
-
-  /* INFO GRID */
   .info-grid{
     display:grid;
     grid-template-columns: 1fr;
@@ -466,9 +393,7 @@
   }
 
   @media (min-width: 480px) {
-    .info-grid{
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .info-grid{ grid-template-columns: repeat(2, 1fr); }
   }
 
   .info-item{
@@ -500,7 +425,6 @@
     line-height: 1.3;
   }
 
-  /* ACTION PANEL */
   .action-panel{
     background: rgba(232,240,255,0.03);
     border-radius: var(--radius-md);
@@ -532,7 +456,6 @@
     font-size:1rem;
   }
 
-  /* CONTACT BUTTONS */
   .contact-info{
     background: rgba(74,158,255,0.1);
     border-radius: var(--radius-sm);
@@ -544,7 +467,7 @@
     gap: 0.8rem;
   }
 
-  .contact-button {
+  .contact-button{
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -559,13 +482,13 @@
     width: 100%;
   }
 
-  .contact-button:hover {
+  .contact-button:hover{
     background: rgba(74,158,255,0.15);
     border-color: rgba(74,158,255,0.3);
     transform: translateY(-2px);
   }
 
-  .contact-button.whatsapp:hover {
+  .contact-button.whatsapp:hover{
     background: rgba(37, 211, 102, 0.15);
     border-color: rgba(37, 211, 102, 0.3);
   }
@@ -582,11 +505,11 @@
     font-size: 1.1rem;
   }
 
-  .contact-button.whatsapp .contact-icon {
+  .contact-button.whatsapp .contact-icon{
     background: rgba(37, 211, 102, 0.2);
   }
 
-  .contact-text {
+  .contact-text{
     flex: 1;
     min-width: 0;
     text-align: left;
@@ -613,21 +536,16 @@
     color: var(--ice);
   }
 
-  .contact-copy-icon {
+  .contact-copy-icon{
     opacity: 0.6;
     transition: opacity 0.3s ease;
     font-size: 1rem;
     flex-shrink: 0;
   }
 
-  .contact-button:hover .contact-copy-icon {
-    opacity: 1;
-  }
+  .contact-button:hover .contact-copy-icon{ opacity: 1; }
 
-  /* TAGS */
-  .tags-container{
-    margin-top:1.5rem;
-  }
+  .tags-container{ margin-top:1.5rem; }
 
   .tags-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -661,7 +579,6 @@
     transform: translateY(-2px);
   }
 
-  /* FOOTER */
   .card-footer{
     padding: 1.5rem;
     border-top: 1px solid rgba(232,240,255,0.1);
@@ -683,33 +600,23 @@
     font-weight:700;
   }
 
-  /* ANIMAÇÕES */
   @keyframes slideUp{
-    from{
-      opacity:0;
-      transform: translateY(40px);
-    }
-    to{
-      opacity:1;
-      transform: translateY(0);
-    }
+    from{ opacity:0; transform: translateY(40px); }
+    to{ opacity:1; transform: translateY(0); }
   }
 
-  .animate-in{
-    animation: slideUp 0.8s ease forwards;
-  }
-
+  .animate-in{ animation: slideUp 0.8s ease forwards; }
   .delay-1{ animation-delay: 0.2s; opacity:0; }
   .delay-2{ animation-delay: 0.4s; opacity:0; }
   .delay-3{ animation-delay: 0.6s; opacity:0; }
 
-  /* ====== NOVO BOTÃO CTA DESTACADO ====== */
-  .cta-section {
+  /* ====== CTA DESTACADO ====== */
+  .cta-section{
     grid-column: 1 / -1;
     margin: 1.5rem 0;
   }
 
-  .cta-container {
+  .cta-container{
     background: linear-gradient(135deg, rgba(10, 21, 37, 0.9) 0%, rgba(14, 28, 48, 0.95) 100%);
     border-radius: var(--radius-lg);
     padding: 3rem 2rem;
@@ -717,12 +624,12 @@
     position: relative;
     overflow: hidden;
     text-align: center;
-    box-shadow: 
+    box-shadow:
       0 20px 40px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  .cta-container::before {
+  .cta-container::before{
     content: '';
     position: absolute;
     inset: 0;
@@ -730,23 +637,16 @@
     z-index: 1;
   }
 
-  .cta-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #FF0000 0%, #FF6B6B 100%);
-    color: white;
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-    position: relative;
-    z-index: 2;
+  .cta-container::after{
+    content:'';
+    position:absolute;
+    inset:-2px;
+    background: radial-gradient(circle at 50% 0%, rgba(232,240,255,0.08) 0%, transparent 55%);
+    pointer-events:none;
+    z-index:1;
   }
 
-  .cta-heading {
+  .cta-heading{
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 800;
@@ -757,14 +657,14 @@
     z-index: 2;
   }
 
-  .cta-heading span {
+  .cta-heading span{
     background: linear-gradient(135deg, #4A9EFF 0%, #8BC6FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .cta-description {
+  .cta-description{
     font-size: 1.1rem;
     color: var(--silver-medium);
     max-width: 600px;
@@ -774,8 +674,7 @@
     z-index: 2;
   }
 
-  /* BOTÃO PRINCIPAL */
-  .cta-button-main {
+  .cta-button-main{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -792,7 +691,7 @@
     border: none;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 
+    box-shadow:
       0 10px 30px rgba(74, 158, 255, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     position: relative;
@@ -800,7 +699,7 @@
     overflow: hidden;
   }
 
-  .cta-button-main::before {
+  .cta-button-main::before{
     content: '';
     position: absolute;
     inset: 0;
@@ -809,31 +708,21 @@
     transition: opacity 0.3s ease;
   }
 
-  .cta-button-main:hover {
+  .cta-button-main:hover{
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 
+    box-shadow:
       0 20px 50px rgba(74, 158, 255, 0.5),
       0 0 0 1px rgba(255, 255, 255, 0.2) inset;
   }
 
-  .cta-button-main:hover::before {
-    opacity: 1;
-  }
+  .cta-button-main:hover::before{ opacity: 1; }
 
-  .cta-button-main:active {
-    transform: translateY(-3px) scale(1.01);
-  }
+  .cta-button-main:active{ transform: translateY(-3px) scale(1.01); }
 
-  .cta-icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
+  .cta-icon{ font-size: 1.5rem; transition: transform 0.3s ease; }
+  .cta-button-main:hover .cta-icon{ transform: translateX(5px); }
 
-  .cta-button-main:hover .cta-icon {
-    transform: translateX(5px);
-  }
-
-  .cta-sparkle {
+  .cta-sparkle{
     position: absolute;
     width: 20px;
     height: 20px;
@@ -843,343 +732,217 @@
     z-index: 1;
   }
 
-  .cta-sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-  .cta-sparkle:nth-child(2) { top: 60%; right: 15%; animation-delay: 1s; }
-  .cta-sparkle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+  .cta-sparkle:nth-child(1){ top: 20%; left: 10%; animation-delay: 0s; }
+  .cta-sparkle:nth-child(2){ top: 60%; right: 15%; animation-delay: 1s; }
+  .cta-sparkle:nth-child(3){ bottom: 30%; left: 20%; animation-delay: 2s; }
 
-  @keyframes sparkle {
+  @keyframes sparkle{
     0%, 100% { opacity: 0; transform: scale(0); }
     50% { opacity: 1; transform: scale(1); }
   }
 
-  /* RESPONSIVIDADE OTIMIZADA PARA CELULARES E TABLETS */
-  @media (max-width: 768px) {
-    /* Layout principal */
-    .invite-card {
-      border-radius: 24px;
-      margin: 1rem;
-    }
-    
-    .content-grid {
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      padding: 1.2rem;
-    }
-    
-    .card-header {
-      padding: 1.5rem 1rem 1rem;
-    }
-    
-    .logo-container {
-      max-width: 300px;
-      margin-bottom: 1rem;
-    }
-    
-    .invite-title {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      padding: 0 0.5rem;
-    }
-    
-    .invite-subtitle {
-      font-size: 0.95rem;
-      line-height: 1.4;
-      padding: 0 0.5rem;
-    }
-    
-    /* Cards */
-    .detail-card {
-      padding: 1.2rem;
-      border-radius: 18px;
-    }
-    
-    .detail-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-    
-    .detail-icon {
-      width: 45px;
-      height: 45px;
-    }
-    
-    .detail-title {
-      font-size: 1.3rem;
-    }
-    
-    .detail-content {
-      font-size: 0.95rem;
-    }
-    
-    /* Painel de ação */
-    .action-panel {
-      padding: 1.2rem;
-      position: static; /* Remove sticky em mobile */
-    }
-    
-    .contact-button {
-      padding: 0.8rem;
-    }
-    
-    .contact-icon {
-      width: 32px;
-      height: 32px;
-      font-size: 1rem;
-    }
-    
-    .contact-value {
-      font-size: 0.95rem;
-    }
-    
-    /* Inovações */
-    .innovations-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    
-    .innovation-item {
-      padding: 1rem;
-    }
-    
-    .innovation-value {
-      font-size: 1.2rem;
-    }
-    
-    /* Info grid */
-    .info-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    /* CTA */
-    .cta-container {
+  /* ====== INOVAÇÕES (FULL WIDTH no formato do CTA) ====== */
+  .innovations-section{
+    grid-column: 1 / -1;
+    margin: 0.5rem 0 0;
+  }
+
+  .innovations-wide{
+    background: linear-gradient(135deg, rgba(10, 21, 37, 0.9) 0%, rgba(14, 28, 48, 0.95) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    border: 1px solid rgba(232, 240, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .innovations-wide::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: radial-gradient(circle at 20% 80%, rgba(74, 158, 255, 0.15) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .innovations-wide > *{ position: relative; z-index: 2; }
+
+  .innovations-wide-header{
+    display:flex;
+    align-items:center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .innovations-wide-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(74,158,255,0.15);
+    border: 1px solid rgba(74,158,255,0.3);
+    display:grid;
+    place-items:center;
+    font-size: 1.4rem;
+  }
+
+  .innovations-wide-title{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: var(--ice);
+    line-height: 1.1;
+  }
+
+  .innovations-wide-title span{
+    background: linear-gradient(135deg, #4A9EFF 0%, #8BC6FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .innovations-wide-text{
+    color: var(--silver-medium);
+    line-height: 1.75;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+    text-align: justify;
+  }
+
+  .innovations-wide-grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.1rem;
+    margin-top: 1.6rem;
+  }
+
+  /* itens internos (reaproveitados) */
+  .innovation-item{
+    background: rgba(232,240,255,0.05);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem;
+    border: 1px solid rgba(232,240,255,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .innovation-item:hover{
+    background: rgba(74,158,255,0.1);
+    border-color: rgba(74,158,255,0.3);
+    transform: translateY(-5px);
+  }
+
+  .innovation-category{
+    font-size: 0.85rem;
+    color: rgba(232,240,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .innovation-value{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ice);
+    line-height: 1.3;
+  }
+
+  /* Responsividade da seção wide */
+  @media (max-width: 1024px){
+    .innovations-wide-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px){
+    .innovations-wide{
       padding: 2rem 1.2rem;
       border-radius: 20px;
     }
-    
-    .cta-button-main {
-      padding: 1.2rem 2rem;
-      font-size: 1.1rem;
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .cta-heading {
-      font-size: 1.6rem;
-    }
-    
-    .cta-description {
-      font-size: 1rem;
-    }
-    
+    .innovations-wide-grid{ grid-template-columns: 1fr; }
+    .innovations-wide-text{ text-align: left; font-size: 1rem; }
+  }
 
-    
-    /* Tags */
-    .tags-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Footer */
-    .card-footer {
-      padding: 1.2rem;
-    }
-    
-    .footer-text {
-      font-size: 0.85rem;
-    }
+  /* ===== Responsividade original ===== */
+  @media (max-width: 768px) {
+    .invite-card { border-radius: 24px; margin: 1rem; }
+    .content-grid { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.2rem; }
+    .card-header { padding: 1.5rem 1rem 1rem; }
+    .logo-container { max-width: 300px; margin-bottom: 1rem; }
+    .invite-title { font-size: 1.2rem; line-height: 1.4; padding: 0 0.5rem; }
+    .invite-subtitle { font-size: 0.95rem; line-height: 1.4; padding: 0 0.5rem; }
+
+    .detail-card { padding: 1.2rem; border-radius: 18px; }
+    .detail-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .detail-icon { width: 45px; height: 45px; }
+    .detail-title { font-size: 1.3rem; }
+    .detail-content { font-size: 0.95rem; }
+
+    .action-panel { padding: 1.2rem; position: static; }
+    .contact-button { padding: 0.8rem; }
+    .contact-icon { width: 32px; height: 32px; font-size: 1rem; }
+    .contact-value { font-size: 0.95rem; }
+
+    .info-grid { grid-template-columns: 1fr; }
+
+    .cta-container { padding: 2rem 1.2rem; border-radius: 20px; }
+    .cta-button-main { padding: 1.2rem 2rem; font-size: 1.1rem; width: 100%; justify-content: center; }
+    .cta-heading { font-size: 1.6rem; }
+    .cta-description { font-size: 1rem; }
+
+    .tags-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-footer { padding: 1.2rem; }
+    .footer-text { font-size: 0.85rem; }
   }
 
   @media (max-width: 480px) {
-    /* Mobile pequeno */
-    .invite-card {
-      border-radius: 20px;
-      margin: 0.5rem;
-    }
-    
-    .content-grid {
-      padding: 1rem;
-      gap: 1rem;
-    }
-    
-    .card-header {
-      padding: 1rem 0.8rem 0.8rem;
-    }
-    
-    .logo-container {
-      max-width: 250px;
-    }
-    
-    .invite-title {
-      font-size: 1.1rem;
-    }
-    
-    .invite-subtitle {
-      font-size: 0.9rem;
-    }
-    
-    /* Cards */
-    .detail-card {
-      padding: 1rem;
-      border-radius: 16px;
-    }
-    
-    .detail-title {
-      font-size: 1.2rem;
-    }
-    
-    .detail-content {
-      font-size: 0.9rem;
-    }
-    
-    /* Botões de contato */
-    .contact-info {
-      padding: 1rem;
-    }
-    
-    .contact-button {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.5rem;
-      padding: 0.8rem;
-    }
-    
-    .contact-text {
-      text-align: center;
-    }
-    
-    .contact-copy-icon {
-      display: none; /* Esconde ícone de copiar em mobile muito pequeno */
-    }
-    
-    /* Inovações */
-    .innovations-text {
-      font-size: 0.95rem;
-      text-align: left;
-    }
-    
-    .innovation-item {
-      padding: 0.9rem;
-    }
-    
-    .innovation-category {
-      font-size: 0.8rem;
-    }
-    
-    .innovation-value {
-      font-size: 1.1rem;
-    }
-    
-    /* CTA */
-    .cta-container {
-      padding: 1.5rem 1rem;
-      border-radius: 18px;
-    }
-    
-    .cta-heading {
-      font-size: 1.4rem;
-    }
-    
-    .cta-description {
-      font-size: 0.95rem;
-    }
-    
-    .cta-button-main {
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    /* Tags */
-    .tags-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    /* Introdução/loader */
-    .intro-logo {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 1.0rem;
-    }
-    
-    .intro-title .title-main {
-      font-size: 2rem;
-    }
-    
-    .intro-title .title-sub {
-      font-size: 0.8rem;
-    }
-    
-    .longevity-logo {
-      max-width: 120px;
-    }
+    .invite-card { border-radius: 20px; margin: 0.5rem; }
+    .content-grid { padding: 1rem; gap: 1rem; }
+    .card-header { padding: 1rem 0.8rem 0.8rem; }
+    .logo-container { max-width: 250px; }
+    .invite-title { font-size: 1.1rem; }
+    .invite-subtitle { font-size: 0.9rem; }
+
+    .detail-card { padding: 1rem; border-radius: 16px; }
+    .detail-title { font-size: 1.2rem; }
+    .detail-content { font-size: 0.9rem; }
+
+    .contact-info { padding: 1rem; }
+    .contact-button { flex-direction: column; text-align: center; gap: 0.5rem; padding: 0.8rem; }
+    .contact-text { text-align: center; }
+    .contact-copy-icon { display: none; }
+
+    .cta-container { padding: 1.5rem 1rem; border-radius: 18px; }
+    .cta-heading { font-size: 1.4rem; }
+    .cta-description { font-size: 0.95rem; }
+    .cta-button-main { padding: 1rem 1.5rem; font-size: 1rem; flex-direction: column; gap: 0.5rem; }
+
+    .tags-grid { grid-template-columns: 1fr; }
+
+    .intro-logo { width: 200px; height: 200px; margin-bottom: 1.0rem; }
+    .title-sub { font-size: 0.8rem; }
+    .longevity-logo { max-width: 120px; }
   }
 
-  /* Tablet */
   @media (min-width: 769px) and (max-width: 1024px) {
-    .invite-card {
-      width: 90vw;
-    }
-    
-    .content-grid {
-      grid-template-columns: 1fr;
-      padding: 1.8rem;
-    }
-    
-    .logo-container {
-      max-width: 400px;
-    }
-    
-    .detail-card, .action-panel {
-      padding: 1.5rem;
-    }
-    
-    .innovations-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .info-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .invite-card { width: 90vw; }
+    .content-grid { grid-template-columns: 1fr; padding: 1.8rem; }
+    .logo-container { max-width: 400px; }
+    .detail-card, .action-panel { padding: 1.5rem; }
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* Landscape para celulares */
   @media (max-height: 600px) and (orientation: landscape) {
-    .intro-container {
-      padding: 1rem;
-    }
-    
-    .intro-logo {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 1rem;
-    }
-    
-    .intro-title .title-main {
-      font-size: 2rem;
-    }
-    
-    .intro-loading {
-      width: 250px;
-      margin-bottom: 1rem;
-    }
-    
-    .longevity-logo {
-      max-width: 100px;
-    }
-    
-    .main-container {
-      padding: 0.5rem;
-    }
-    
-    .invite-card {
-      border-radius: 20px;
-    }
-    
-    .content-grid {
-      padding: 1rem;
-      gap: 1rem;
-    }
+    .intro-container { padding: 1rem; }
+    .intro-logo { width: 120px; height: 120px; margin-bottom: 1rem; }
+    .intro-loading { width: 250px; margin-bottom: 1rem; }
+    .longevity-logo { max-width: 100px; }
+
+    .main-container { padding: 0.5rem; }
+    .invite-card { border-radius: 20px; }
+    .content-grid { padding: 1rem; gap: 1rem; }
   }
 </style>
 </head>
@@ -1191,30 +954,27 @@
     <div class="floating-dots"></div>
   </div>
 
-  <!-- Introdução -->
+  <!-- Introdução (versão anterior) -->
   <div class="intro-container" id="introContainer">
     <div class="intro-logo">
       <div class="swiss-loader">
-        <!-- Substituído a cruz vermelha pelo logo da empresa -->
         <div class="company-logo-loader">
-          <img src="img/logo-edel-white-png-removebg-preview.png"alt="Logo da Empresa">
+          <img src="img/logo-edel-white-png-removebg-preview.png" alt="Logo da Empresa">
         </div>
         <div class="loading-ring"></div>
         <div class="loading-ring"></div>
       </div>
     </div>
-    
+
     <div class="intro-text">
       <h1 class="intro-title">
-        <!-- Removido EDELWHITE, mantido apenas o subtítulo -->
         <span class="title-sub">CONVITE EXCLUSIVO CIOSP 2026</span>
       </h1>
-      
+
       <div class="intro-loading">
         <div class="intro-progress"></div>
       </div>
-      
-      <!-- Adicionado logo Longevity Lab Basel abaixo da barra -->
+
       <div class="intro-footer">
         <img src="img/longevity-removebg-preview.png" alt="Longevity Lab Basel" class="longevity-logo">
       </div>
@@ -1233,7 +993,7 @@
                 <img src="img/logo-branco-png.png" alt="EdelWhite Logo">
               </div>
             </div>
-          
+
             <h2 class="invite-title animate-in delay-2">
               Convidamos você para um encontro exclusivo no maior evento de <span>odontologia mundial</span>, onde teremos também o relançamento global da marca edelwhite swiss.
             </h2>
@@ -1253,8 +1013,8 @@
             <h3 class="detail-title">O Evento</h3>
           </div>
           <p class="detail-content">
-            O <strong>CIOSP 2026</strong> é o maior congresso de odontologia do mundo, 
-            reunindo os principais especialistas, pesquisadores e empresas do setor. 
+            O <strong>CIOSP 2026</strong> é o maior congresso de odontologia do mundo,
+            reunindo os principais especialistas, pesquisadores e empresas do setor.
             Um ambiente perfeito para networking, aprendizado e descoberta de tendências.
           </p>
           <div class="info-grid">
@@ -1283,9 +1043,8 @@
           <p class="panel-subtitle">
             Entre em contato para agendar seu horário exclusivo ou obter mais informações.
           </p>
-          
+
           <div class="contact-info">
-            <!-- Botão para email comercial -->
             <button class="contact-button email-button" onclick="copyEmail(this, 'comercial@edelwhite.com')" title="Clique para copiar">
               <div class="contact-icon">✉️</div>
               <div class="contact-text">
@@ -1294,8 +1053,7 @@
               </div>
               <span class="contact-copy-icon">📋</span>
             </button>
-            
-            <!-- Botão para email pessoal -->
+
             <button class="contact-button email-button" onclick="copyEmail(this, 'juliana.alexandre@edelwhite.com')" title="Clique para copiar">
               <div class="contact-icon">👤</div>
               <div class="contact-text">
@@ -1304,9 +1062,12 @@
               </div>
               <span class="contact-copy-icon">📋</span>
             </button>
-            
-            <!-- Botão para WhatsApp -->
-            <a href="https://wa.me/5511978358700?text=Olá, podemos conversar?" target="_blank" class="contact-button whatsapp" title="Abrir WhatsApp">
+
+            <a href="https://wa.me/5511978358700?text=Olá, podemos conversar?"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-button whatsapp"
+               title="Abrir WhatsApp">
               <div class="contact-icon">💬</div>
               <div class="contact-text">
                 <span class="contact-label">WhatsApp</span>
@@ -1329,36 +1090,40 @@
           </div>
         </div>
 
-        <!-- Seção de Inovações -->
-        <div class="detail-card animate-in delay-2">
-          <div class="detail-header">
-            <div class="detail-icon">💡</div>
-            <h3 class="detail-title">Inovações</h3>
-          </div>
-          
-          <div class="innovations-container">
-            <p class="innovations-text">
-O relançamento global de 2026 é mais do que um novo ciclo de produtos; é uma redefinição fundamental do nosso propósito e do nosso mercado. Estamos fazendo a transição de uma empresa de higiene oral para uma líder em bem-estar oral - inteligente, holística e profundamente focada na longevidade. Um novo capítulo da nossa história. 
-Esta não é apenas uma evolução de marca; é uma revolução de mercado. Como nossos valiosos parceiros de vendas, vocês são a força motriz por trás desta transformação.
-Convidamos você a vivenciar essa transformação conosco, conhecer de perto a nossa visão, a estratégia e o conhecimento de produto essenciais necessários para liderar essa mudança e alcançar um sucesso sem precedentes na nova era da saúde oral.
+        <!-- INOVAÇÕES (FULL WIDTH no formato do CTA) -->
+        <div class="innovations-section animate-in delay-2">
+          <div class="innovations-wide">
+            <div class="innovations-wide-header">
+              <div class="innovations-wide-icon">💡</div>
+              <h3 class="innovations-wide-title">Inovações <span>2026</span></h3>
+            </div>
+
+            <p class="innovations-wide-text">
+              O relançamento global de 2026 é mais do que um novo ciclo de produtos; é uma redefinição fundamental do nosso propósito e do nosso mercado.
+              Estamos fazendo a transição de uma empresa de higiene oral para uma líder em bem-estar oral — inteligente, holística e profundamente focada na longevidade.
+              Um novo capítulo da nossa história.
+              <br><br>
+              Esta não é apenas uma evolução de marca; é uma revolução de mercado. Como nossos valiosos parceiros de vendas, vocês são a força motriz por trás desta transformação.
+              Convidamos você a vivenciar essa transformação conosco, conhecer de perto a nossa visão, a estratégia e o conhecimento de produto essenciais necessários para liderar essa mudança
+              e alcançar um sucesso sem precedentes na nova era da saúde oral.
             </p>
-            
-            <div class="innovations-grid">
+
+            <div class="innovations-wide-grid">
               <div class="innovation-item">
                 <div class="innovation-category">LONGEVIDADE</div>
                 <div class="innovation-value">Bem estar</div>
               </div>
-              
+
               <div class="innovation-item">
                 <div class="innovation-category">FASHION</div>
                 <div class="innovation-value">Design & Cores novas</div>
               </div>
-              
+
               <div class="innovation-item">
                 <div class="innovation-category">INOVAÇÃO</div>
                 <div class="innovation-value">Pesquisa & Desenvolvimento</div>
               </div>
-              
+
               <div class="innovation-item">
                 <div class="innovation-category">COMPROMISSO</div>
                 <div class="innovation-value">Limpeza profunda & Equilíbrio bucal</div>
@@ -1367,22 +1132,21 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
           </div>
         </div>
 
-        <!-- NOVO CTA DESTACADO -->
+        <!-- CTA -->
         <div class="cta-section animate-in delay-3">
           <div class="cta-container">
             <div class="cta-sparkle"></div>
             <div class="cta-sparkle"></div>
             <div class="cta-sparkle"></div>
-            
-            
+
             <h2 class="cta-heading">
               Venha conferir nossas <span>novidades</span>
             </h2>
-            
+
             <p class="cta-description">
               Acesse a apresentação completa e descubra tudo sobre o relançamento global da Edelwhite Swiss.
             </p>
-            
+
             <a href="https://gamma.app/docs/PT-Edelwhite-2026-New-swiss-premium-oral-care--gcj32cjep15tylb?mode=doc"
                target="_blank"
                rel="noopener noreferrer"
@@ -1404,34 +1168,25 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
   </div>
 
 <script>
-  // ====== INTRODUÇÃO ======
+  // ====== INTRO (VERSÃO ANTERIOR) ======
   const introContainer = document.getElementById('introContainer');
-  
-  function hideIntro() {
-    introContainer.classList.add('intro-hidden');
-  }
-  
+  function hideIntro() { introContainer.classList.add('intro-hidden'); }
   setTimeout(hideIntro, 8000);
-  
+
   // ====== ANIMAÇÕES ======
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
     });
   }, observerOptions);
-  
+
   document.querySelectorAll('.animate-in').forEach(el => {
     el.style.animationPlayState = 'paused';
     observer.observe(el);
   });
-  
+
   // ====== FUNÇÃO PARA COPIAR EMAIL ======
   async function copyEmail(btn, email) {
     try {
@@ -1480,11 +1235,11 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
       console.error('Erro ao copiar:', err);
     }
   }
-  
-  // ====== EFEITO DE PARTÍCULAS ======
+
+  // ====== EFEITO DE PARTÍCULAS (background) ======
   function createSilverParticles() {
     const particlesContainer = document.querySelector('.background-art');
-    
+
     for (let i = 0; i < 15; i++) {
       const particle = document.createElement('div');
       particle.style.position = 'absolute';
@@ -1494,7 +1249,7 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
       particle.style.borderRadius = '50%';
       particle.style.left = Math.random() * 100 + '%';
       particle.style.top = Math.random() * 100 + '%';
-      
+
       particle.animate([
         { transform: 'translateY(0px)', opacity: 0 },
         { transform: `translateY(${Math.random() * 80 - 40}px)`, opacity: 0.7 },
@@ -1504,11 +1259,11 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
         iterations: Infinity,
         delay: Math.random() * 6000
       });
-      
+
       particlesContainer.appendChild(particle);
     }
   }
-  
+
   setTimeout(createSilverParticles, 9000);
 </script>
 </body>
