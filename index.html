@@ -91,8 +91,8 @@
   }
 
   .intro-logo{
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     margin-bottom: 2rem;
     position:relative;
   }
@@ -103,50 +103,19 @@
     position:relative;
   }
 
-  .swiss-circle{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    background: #FF0000;
-    position:relative;
-    overflow:hidden;
-    border: 6px solid rgba(255,255,255,0.3);
-    box-shadow: 
-      0 0 60px rgba(255,0,0,0.4),
-      inset 0 0 40px rgba(255,255,255,0.1);
+  .company-logo-loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .swiss-cross{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-  }
-
-  .cross-vertical{
-    position:absolute;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
-    width: 30px;
-    height: 100px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.5);
-  }
-
-  .cross-horizontal{
-    position:absolute;
-    top:50%;
-    left:0;
-    transform:translateY(-50%);
-    width: 100px;
-    height: 30px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  .company-logo-loader img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
   }
 
   .loading-ring{
@@ -230,6 +199,17 @@
   @keyframes loading{
     0%{ width:0%; }
     100%{ width:100%; }
+  }
+
+  /* Logo Longevity abaixo da barra de loading */
+  .intro-footer {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .longevity-logo {
+    max-width: 200px;
+    height: auto;
   }
 
   /* LAYOUT PRINCIPAL */
@@ -872,43 +852,333 @@
     50% { opacity: 1; transform: scale(1); }
   }
 
-  /* RESPONSIVO */
+  /* RESPONSIVIDADE OTIMIZADA PARA CELULARES E TABLETS */
   @media (max-width: 768px) {
+    /* Layout principal */
+    .invite-card {
+      border-radius: 24px;
+      margin: 1rem;
+    }
+    
     .content-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding: 1.2rem;
+    }
+    
+    .card-header {
+      padding: 1.5rem 1rem 1rem;
+    }
+    
+    .logo-container {
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+    
+    .invite-title {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      padding: 0 0.5rem;
+    }
+    
+    .invite-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding: 0 0.5rem;
+    }
+    
+    /* Cards */
+    .detail-card {
+      padding: 1.2rem;
+      border-radius: 18px;
+    }
+    
+    .detail-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    
+    .detail-icon {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .detail-title {
+      font-size: 1.3rem;
+    }
+    
+    .detail-content {
+      font-size: 0.95rem;
+    }
+    
+    /* Painel de ação */
+    .action-panel {
+      padding: 1.2rem;
+      position: static; /* Remove sticky em mobile */
+    }
+    
+    .contact-button {
+      padding: 0.8rem;
+    }
+    
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+    
+    .contact-value {
+      font-size: 0.95rem;
+    }
+    
+    /* Inovações */
+    .innovations-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .innovation-item {
+      padding: 1rem;
+    }
+    
+    .innovation-value {
+      font-size: 1.2rem;
+    }
+    
+    /* Info grid */
+    .info-grid {
       grid-template-columns: 1fr;
     }
     
+    /* CTA */
     .cta-container {
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.2rem;
+      border-radius: 20px;
     }
     
     .cta-button-main {
       padding: 1.2rem 2rem;
       font-size: 1.1rem;
-    }
-    
-    .cta-heading {
-      font-size: 1.8rem;
-    }
-    
-    .innovations-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cta-button-main {
       width: 100%;
-      justify-content: space-between;
-      padding: 1rem 1.5rem;
+      justify-content: center;
     }
     
     .cta-heading {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
     
     .cta-description {
       font-size: 1rem;
+    }
+    
+
+    
+    /* Tags */
+    .tags-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer */
+    .card-footer {
+      padding: 1.2rem;
+    }
+    
+    .footer-text {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Mobile pequeno */
+    .invite-card {
+      border-radius: 20px;
+      margin: 0.5rem;
+    }
+    
+    .content-grid {
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    .card-header {
+      padding: 1rem 0.8rem 0.8rem;
+    }
+    
+    .logo-container {
+      max-width: 250px;
+    }
+    
+    .invite-title {
+      font-size: 1.1rem;
+    }
+    
+    .invite-subtitle {
+      font-size: 0.9rem;
+    }
+    
+    /* Cards */
+    .detail-card {
+      padding: 1rem;
+      border-radius: 16px;
+    }
+    
+    .detail-title {
+      font-size: 1.2rem;
+    }
+    
+    .detail-content {
+      font-size: 0.9rem;
+    }
+    
+    /* Botões de contato */
+    .contact-info {
+      padding: 1rem;
+    }
+    
+    .contact-button {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+      padding: 0.8rem;
+    }
+    
+    .contact-text {
+      text-align: center;
+    }
+    
+    .contact-copy-icon {
+      display: none; /* Esconde ícone de copiar em mobile muito pequeno */
+    }
+    
+    /* Inovações */
+    .innovations-text {
+      font-size: 0.95rem;
+      text-align: left;
+    }
+    
+    .innovation-item {
+      padding: 0.9rem;
+    }
+    
+    .innovation-category {
+      font-size: 0.8rem;
+    }
+    
+    .innovation-value {
+      font-size: 1.1rem;
+    }
+    
+    /* CTA */
+    .cta-container {
+      padding: 1.5rem 1rem;
+      border-radius: 18px;
+    }
+    
+    .cta-heading {
+      font-size: 1.4rem;
+    }
+    
+    .cta-description {
+      font-size: 0.95rem;
+    }
+    
+    .cta-button-main {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    /* Tags */
+    .tags-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    /* Introdução/loader */
+    .intro-logo {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1.0rem;
+    }
+    
+    .intro-title .title-main {
+      font-size: 2rem;
+    }
+    
+    .intro-title .title-sub {
+      font-size: 0.8rem;
+    }
+    
+    .longevity-logo {
+      max-width: 120px;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .invite-card {
+      width: 90vw;
+    }
+    
+    .content-grid {
+      grid-template-columns: 1fr;
+      padding: 1.8rem;
+    }
+    
+    .logo-container {
+      max-width: 400px;
+    }
+    
+    .detail-card, .action-panel {
+      padding: 1.5rem;
+    }
+    
+    .innovations-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Landscape para celulares */
+  @media (max-height: 600px) and (orientation: landscape) {
+    .intro-container {
+      padding: 1rem;
+    }
+    
+    .intro-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+    
+    .intro-title .title-main {
+      font-size: 2rem;
+    }
+    
+    .intro-loading {
+      width: 250px;
+      margin-bottom: 1rem;
+    }
+    
+    .longevity-logo {
+      max-width: 100px;
+    }
+    
+    .main-container {
+      padding: 0.5rem;
+    }
+    
+    .invite-card {
+      border-radius: 20px;
+    }
+    
+    .content-grid {
+      padding: 1rem;
+      gap: 1rem;
     }
   }
 </style>
@@ -925,11 +1195,9 @@
   <div class="intro-container" id="introContainer">
     <div class="intro-logo">
       <div class="swiss-loader">
-        <div class="swiss-circle">
-          <div class="swiss-cross">
-            <div class="cross-vertical"></div>
-            <div class="cross-horizontal"></div>
-          </div>
+        <!-- Substituído a cruz vermelha pelo logo da empresa -->
+        <div class="company-logo-loader">
+          <img src="img/logo-edel-white-png-removebg-preview.png"alt="Logo da Empresa">
         </div>
         <div class="loading-ring"></div>
         <div class="loading-ring"></div>
@@ -938,12 +1206,17 @@
     
     <div class="intro-text">
       <h1 class="intro-title">
-        <span class="title-main">EDELWHITE</span>
+        <!-- Removido EDELWHITE, mantido apenas o subtítulo -->
         <span class="title-sub">CONVITE EXCLUSIVO CIOSP 2026</span>
       </h1>
       
       <div class="intro-loading">
         <div class="intro-progress"></div>
+      </div>
+      
+      <!-- Adicionado logo Longevity Lab Basel abaixo da barra -->
+      <div class="intro-footer">
+        <img src="img/longevity-removebg-preview.png" alt="Longevity Lab Basel" class="longevity-logo">
       </div>
     </div>
   </div>
@@ -1068,8 +1341,6 @@
 O relançamento global de 2026 é mais do que um novo ciclo de produtos; é uma redefinição fundamental do nosso propósito e do nosso mercado. Estamos fazendo a transição de uma empresa de higiene oral para uma líder em bem-estar oral - inteligente, holística e profundamente focada na longevidade. Um novo capítulo da nossa história. 
 Esta não é apenas uma evolução de marca; é uma revolução de mercado. Como nossos valiosos parceiros de vendas, vocês são a força motriz por trás desta transformação.
 Convidamos você a vivenciar essa transformação conosco, conhecer de perto a nossa visão, a estratégia e o conhecimento de produto essenciais necessários para liderar essa mudança e alcançar um sucesso sem precedentes na nova era da saúde oral.
-
-
             </p>
             
             <div class="innovations-grid">
@@ -1103,7 +1374,6 @@ Convidamos você a vivenciar essa transformação conosco, conhecer de perto a n
             <div class="cta-sparkle"></div>
             <div class="cta-sparkle"></div>
             
-            <div class="cta-badge">Lançamento 2026</div>
             
             <h2 class="cta-heading">
               Venha conferir nossas <span>novidades</span>
