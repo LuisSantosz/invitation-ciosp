@@ -142,23 +142,65 @@
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
   }
 
-  .loading-ring{
-    position:absolute;
-    inset:-20px;
-    border-radius:50%;
-    border: 3px solid transparent;
-    border-top-color: var(--primary);
-    border-right-color: var(--secondary);
-    animation: rotate 3s linear infinite;
-  }
+.swiss-loader{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
-  .loading-ring:nth-child(2){
-    inset:-35px;
-    border-top-color: var(--secondary);
-    border-right-color: var(--accent);
-    animation-duration: 4s;
-    animation-direction: reverse;
-  }
+/* Logo sempre por cima */
+.company-logo-loader{
+  position: relative;
+  z-index: 3;
+}
+
+/* 2 anéis desenhados via pseudo-elements (sem bug de ordem/seletores) */
+.swiss-loader::before,
+.swiss-loader::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid transparent;
+  will-change: transform;
+  pointer-events:none;
+}
+
+/* Anel 1 */
+.swiss-loader::before{
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  border-top-color: var(--primary);
+  border-left-color: rgba(107,206,255,0.35); /* suave, evita “dupla ponta” */
+  animation: ringSpin 3s linear infinite;
+}
+
+/* Anel 2 (maior e ao contrário) */
+.swiss-loader::after{
+  width: calc(100% + 70px);
+  height: calc(100% + 70px);
+  border-top-color: var(--secondary);
+  border-right-color: rgba(139,198,255,0.35);
+  animation: ringSpinReverse 4s linear infinite;
+}
+
+@keyframes ringSpin{
+  from{ transform: translate(-50%, -50%) rotate(0deg); }
+  to{ transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes ringSpinReverse{
+  from{ transform: translate(-50%, -50%) rotate(360deg); }
+  to{ transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+
+/* ✅ garante camadas corretas (anéis atrás do logo) */
+.company-logo-loader{ position: relative; z-index: 2; }
+.loading-ring{ z-index: 1; }
+
 
   @keyframes rotate{
     from{ transform: rotate(0deg); }
@@ -1087,16 +1129,16 @@
   <div class="intro-container" id="introContainer">
     <div class="intro-logo">
       <div class="swiss-loader">
-        <div class="company-logo-loader">
-          <img src="img/logo-edel-white-png-removebg-preview.png" alt="Logo da Empresa">
-        </div>
-        <div class="loading-ring"></div>
-        <div class="loading-ring"></div>
-      </div>
+  <div class="company-logo-loader">
+    <img src="img/logo-edel-white-png-removebg-preview.png" alt="Logo da Empresa">
+  </div>
+</div>
+
     </div>
 
     <div class="intro-text">
       <div class="intro-title">
+        <br>
         <span class="title-sub">CONVITE EXCLUSIVO CIOSP 2026</span>
       </div>
 
@@ -1115,11 +1157,6 @@
     <div class="invite-card">
 
       <!-- TOPBAR -->
-      <div class="topbar">
-        <a class="topbar-btn" href="#info">Informações</a>
-        <a class="topbar-btn" href="#inov">Inovações</a>
-        <a class="topbar-btn" href="#cta">Apresentação</a>
-      </div>
 
       <!-- Header -->
       <div class="card-header">
