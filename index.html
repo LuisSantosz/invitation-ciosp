@@ -986,6 +986,38 @@
     .detail-card { padding: 1rem; }
     .action-panel { padding: 1rem; }
   }
+
+  /* ===== FIX: textos longos cortando no mobile ===== */
+.info-value,
+.detail-content,
+.innovations-wide-text,
+.innovation-category,
+.innovation-value,
+.tag,
+.invite-title,
+.invite-subtitle{
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  hyphens: auto;
+}
+
+/* Garante que os itens não “escondam” o texto */
+.innovation-item,
+.info-item,
+.detail-card,
+.action-panel{
+  overflow: visible !important;
+}
+
+/* Caso algum elemento esteja estourando a largura */
+.invite-card,
+.content-grid,
+.innovations-wide,
+.cta-container{
+  max-width: 100%;
+}
+
 </style>
 </head>
 
